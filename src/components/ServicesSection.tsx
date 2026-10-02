@@ -73,7 +73,7 @@ const ServicesSection = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105"
                   />
                   <div className={`absolute top-4 left-4 w-10 h-10 ${service.color} rounded-full flex items-center justify-center`}>
                     <service.icon className="w-5 h-5 text-foreground" />
@@ -84,7 +84,7 @@ const ServicesSection = () => {
                   <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{service.description}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-primary font-semibold text-sm">{service.price}</span>
-                    <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1-transform" />
+                    <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1" />
                   </div>
                 </div>
               </Link>

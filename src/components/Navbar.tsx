@@ -39,7 +39,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <Video className="w-8 h-8 text-primary-transform group-hover:scale-110" />
+            <Video className="w-8 h-8 text-primary" />
             <span className="text-base md:text-lg font-bold tracking-tight text-foreground uppercase">
               Cognitive <span className="text-primary">Camera Vision</span>
             </span>
@@ -51,7 +51,7 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-2 rounded-lg text-sm font-medium-colors ${
+                className={`px-3 py-2 rounded-lg text-sm font-medium ${
                   location.pathname === link.path
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -64,7 +64,7 @@ const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:254796497698" className="flex items-center gap-1.5 text-sm whitespace-nowrap text-muted-foreground hover:text-foreground-colors">
+            <a href="tel:254796497698" className="flex items-center gap-1.5 text-sm whitespace-nowrap text-muted-foreground hover:text-foreground">
               <Phone className="w-4 h-4" />
               +254 796 497 698
             </a>
@@ -85,7 +85,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
+      <>
         {isOpen && (
           <div
             className="lg:hidden bg-card border-t border-border overflow-hidden"
@@ -95,7 +95,7 @@ const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium-colors ${
+                  className={`px-4 py-3 rounded-lg text-sm font-medium ${
                     location.pathname === link.path
                       ? "text-primary bg-primary/10"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -112,7 +112,7 @@ const Navbar = () => {
             </nav>
           </div>
         )}
-      </AnimatePresence>
+      </>
     </header>
   );
 };

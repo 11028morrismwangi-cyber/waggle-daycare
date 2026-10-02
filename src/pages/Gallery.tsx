@@ -55,7 +55,7 @@ const Gallery = () => {
           <div className="flex flex-wrap justify-center gap-2 mb-10">
             {categories.map((cat) => (
               <button key={cat} onClick={() => setActive(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-medium-colors ${active === cat ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>
+                className={`px-4 py-2 rounded-full text-sm font-medium ${active === cat ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>
                 {cat}
               </button>
             ))}
@@ -63,19 +63,19 @@ const Gallery = () => {
 
           {/* Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <AnimatePresence mode="popLayout">
+            <>
               {filtered.map((photo, i) => (
                 <div key={`${photo.caption}-${i}`}
                   className="group relative aspect-square rounded-2xl overflow-hidden bg-muted cursor-pointer">
-                  <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover-transform duration-300 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/50-colors flex items-end">
-                    <p className="text-primary-foreground text-sm font-medium p-4 translate-y-full group-hover:translate-y-0-transform duration-300">
+                  <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/50 flex items-end">
+                    <p className="text-primary-foreground text-sm font-medium p-4 translate-y-full group-hover:translate-y-0">
                       {photo.caption}
                     </p>
                   </div>
                 </div>
               ))}
-            </AnimatePresence>
+            </>
           </div>
         </div>
       </section>

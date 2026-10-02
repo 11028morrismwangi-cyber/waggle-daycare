@@ -88,7 +88,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Phone</p>
-                      <a href="tel:254796497698" className="text-sm text-muted-foreground hover:text-primary-colors">+254 796 497 698</a>
+                      <a href="tel:254796497698" className="text-sm text-muted-foreground hover:text-primary">+254 796 497 698</a>
                     </div>
                   </div>
                   <div className="flex gap-3 items-start">
@@ -97,7 +97,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Email</p>
-                      <a href="mailto:info@cognitivevision.co.ke" className="text-sm text-muted-foreground hover:text-primary-colors">info@cognitivevision.co.ke</a>
+                      <a href="mailto:info@cognitivevision.co.ke" className="text-sm text-muted-foreground hover:text-primary">info@cognitivevision.co.ke</a>
                     </div>
                   </div>
                 </div>
