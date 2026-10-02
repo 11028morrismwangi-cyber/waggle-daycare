@@ -1,28 +1,25 @@
 import { Link } from "react-router-dom";
-import { Check, Home, Store, Building2 } from "lucide-react";
+import { Camera, FileText, ScanSearch } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const plans = [
+const values = [
   {
-    name: "Home Security",
-    icon: Home,
-    price: "Custom quote",
-    features: ["Free site survey", "Indoor & outdoor cameras", "Mobile viewing setup", "Night vision coverage"],
-    popular: false,
+    name: "Keep What Already Works",
+    icon: Camera,
+    metric: "Up to 96%",
+    description: "of a compatible existing CCTV system can be retained while intelligence is added on top.",
   },
   {
-    name: "Business Surveillance",
-    icon: Store,
-    price: "Custom quote",
-    features: ["Multi-camera coverage", "NVR with extended storage", "Entry & monitoring", "Staff access levels"],
-    popular: true,
+    name: "Reports Without Extra Cost",
+    icon: FileText,
+    metric: "KES 0",
+    description: "for daily email reports and continuous footage analysis as configured in the solution.",
   },
   {
-    name: "Enterprise & Estates",
-    icon: Building2,
-    price: "Custom quote",
-    features: ["Full site assessment", "Central monitoring room", "Perimeter & gate coverage", "Dedicated support plan"],
-    popular: false,
+    name: "No Compulsory Renewal",
+    icon: ScanSearch,
+    metric: "Zero",
+    description: "mandatory subscriptions. One investment unlocks more capability from your cameras.",
   },
 ];
 
@@ -33,52 +30,37 @@ const PricingPreview = () => {
         <div
           className="text-center mb-14"
         >
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Pricing</span>
+          <span className="text-sm font-semibold text-primary uppercase tracking-wider">More Value From CCTV</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2">
-            Tailored to Your Property
+            Keep the Cameras. Add the Intelligence.
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            Every property is different — pricing depends on the number of cameras, and storage needs. Request a quote and we'll survey your site for free.
+            We integrate with compatible infrastructure where possible, reducing disruption and avoiding an unnecessary full-system replacement.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto items-start">
-          {plans.map((plan, i) => (
+          {values.map((value) => (
             <div
-              key={plan.name}
-              className={`relative bg-card rounded-2xl p-8 shadow-card ${
-                plan.popular ? "border-2 border-primary md:-mt-4 md:mb-4" : "border border-border"
-              }`}
+              key={value.name}
+              className="relative bg-card rounded-lg p-8 shadow-card border border-border"
             >
-              {plan.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 rounded-full">
-                  Most Requested
-                </span>
-              )}
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <plan.icon className="w-6 h-6 text-primary" />
+                <value.icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground">{plan.name}</h3>
+              <h3 className="text-lg font-semibold text-foreground">{value.name}</h3>
               <div className="mt-4 mb-6">
-                <span className="text-2xl font-bold text-primary">{plan.price}</span>
+                <span className="text-3xl font-bold text-primary">{value.metric}</span>
               </div>
-              <ul className="space-y-3 mb-8">
-                {plan.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Check className="w-4 h-4 text-primary shrink-0" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <Button
-                variant={plan.popular ? "brand" : "outline"}
-                className="w-full"
-                asChild
-              >
-                <Link to="/book-daycare">Request a Quote</Link>
-              </Button>
+              <p className="text-sm text-muted-foreground leading-relaxed min-h-20">{value.description}</p>
             </div>
           ))}
+        </div>
+        <div className="text-center mt-10">
+          <p className="text-sm text-muted-foreground mb-4">Final scope and pricing are tailored to your cameras, site and monitoring priorities.</p>
+          <Button variant="brand" size="lg" asChild>
+            <Link to="/book-daycare">Discuss Your Site</Link>
+          </Button>
         </div>
       </div>
     </section>

@@ -60,7 +60,7 @@ const Contact = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight mb-4">
               We'd Love to <span className="text-primary">Hear From You</span>
             </h1>
-            <p className="text-lg text-muted-foreground">Questions, concerns, or ready for a free site survey? We're here to help.</p>
+            <p className="text-lg text-muted-foreground">Tell us what you are trying to protect and what you need your cameras to recognize.</p>
           </div>
         </div>
       </section>
@@ -88,7 +88,10 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Phone</p>
-                      <a href="tel:254796497698" className="text-sm text-muted-foreground hover:text-primary">+254 796 497 698</a>
+                      <div className="flex flex-col">
+                        <a href="tel:254796497698" className="text-sm text-muted-foreground hover:text-primary">+254 796 497 698</a>
+                        <a href="tel:254737552281" className="text-sm text-muted-foreground hover:text-primary">+254 737 552 281</a>
+                      </div>
                     </div>
                   </div>
                   <div className="flex gap-3 items-start">

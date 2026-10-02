@@ -3,19 +3,19 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     name: "James M.",
-    role: "Homeowner, Westlands",
-    text: "The team installed eight cameras in one afternoon. The mobile app access is seamless and the night-time picture quality is incredible.",
+    role: "Homeowner, Dagoreti",
+    text: "The team installed eight cameras at our home. I particularly enjoy the mobile app access — it is seamless, and the night-time picture quality is incredible.",
     rating: 5,
   },
   {
-    name: "Grace W.",
-    role: "Shop Owner, Eastleigh",
-    text: "They understood exactly what my retail space needed. The footage has already helped resolve an incident — worth every shilling.",
+    name: "Mary G.",
+    role: "Poultry Farmer, Kikuyu",
+    text: "Kudos! I can now view my poultry farming project remotely and see everything happening there.",
     rating: 5,
   },
   {
     name: "David K.",
-    role: "Facilities Manager, Industrial Area",
+    role: "Director, St. Alicia Elite Academy",
     text: "Their maintenance plan keeps our 40-camera system running without fail. Fast response whenever we call, every time.",
     rating: 5,
   },
@@ -28,9 +28,9 @@ const TestimonialsSection = () => {
         <div
           className="text-center mb-14"
         >
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Testimonials</span>
+          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Client Experiences</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2">
-            Trusted Across Nairobi
+            Security That Works in the Real World
           </h2>
         </div>
 
@@ -38,7 +38,7 @@ const TestimonialsSection = () => {
           {testimonials.map((t, i) => (
             <div
               key={t.name}
-              className="bg-card rounded-2xl p-8 shadow-card hover:shadow-card-hover-shadow duration-300"
+              className="bg-card rounded-lg p-8 shadow-card"
             >
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: t.rating }).map((_, j) => (
