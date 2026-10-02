@@ -171,7 +171,7 @@ const Daycare = () => {
             ))}
           </div>
           <p className="text-center text-sm text-muted-foreground mt-8 flex items-center justify-center gap-2">
-            <Store className="w-4 h-4" /> We serve homes, shops, offices and estates — <Warehouse className="w-4 h-4" /> including industrial sites across Nairobi.
+            <Store className="w-4 h-4" /> We serve homes, shops, offices and estates — <Warehouse className="w-4 h-4" /> including industrial sites across Kenya.
           </p>
         </div>
       </section>

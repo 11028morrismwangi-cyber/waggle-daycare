@@ -126,7 +126,7 @@ const Contact = () => {
                 <Car className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <div>
                   <p className="font-medium text-foreground text-sm">Service Area</p>
-                  <p className="text-sm text-muted-foreground">Nairobi and surrounding areas. We travel further afield for larger projects — contact us with your location.</p>
+                  <p className="text-sm text-muted-foreground">Based in Nairobi and serving clients across Kenya. Contact us with your location and project requirements.</p>
                 </div>
               </div>
             </div>
