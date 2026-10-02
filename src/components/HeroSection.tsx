@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-dogs.jpg";
+import { ShieldCheck } from "lucide-react";
+import heroImage from "@/assets/hero-cctv.jpg";
 
 const HeroSection = () => {
   return (
@@ -10,10 +11,10 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Happy dogs running together at Pet Daycare"
+          alt="CCTV security camera installed on a modern building"
           className="w-full h-full object-cover" />
-        
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-transparent" />
+
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/50 to-transparent" />
       </div>
 
       {/* Content */}
@@ -23,43 +24,29 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-2xl">
-          
+
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/20 border border-primary/40 text-primary-foreground text-sm font-semibold mb-6">
+            <ShieldCheck className="w-4 h-4" /> Securing Nairobi & Kenya
+          </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-            Where Every Paw Gets to{" "}
-            <span className="text-primary">Play</span>
+            Smart Vision.{" "}
+            <span className="text-primary">Total Security.</span>
           </h1>
           <p className="text-lg md:text-xl text-primary-foreground/85 mb-8 leading-relaxed max-w-lg">
-            Safe, social, and supervised fun all day long. Your furry family members deserve the best care while you're away.
+            Professional CCTV installation and surveillance systems for homes and businesses across Nairobi. Recorded, monitored, and protected — 24/7.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button variant="hero" size="lg" className="px-8 py-6 text-base" asChild>
-              <Link to="/book-daycare">Book Now</Link>
+              <Link to="/book-daycare">Get a Quote</Link>
             </Button>
             <Button variant="hero-outline" size="lg" className="px-8 py-6 text-base" asChild>
-              <Link to="/about">Learn More</Link>
+              <Link to="/daycare">Our Services</Link>
             </Button>
           </div>
         </motion.div>
       </div>
-
-      {/* Promo Banner */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.6 }}
-        className="absolute bottom-0 left-0 right-0 bg-primary animate-pulse-soft">
-        
-        
-
-
-
-
-
-
-        
-      </motion.div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default HeroSection;

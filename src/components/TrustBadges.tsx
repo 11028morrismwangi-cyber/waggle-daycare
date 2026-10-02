@@ -1,13 +1,13 @@
-import { Shield, Video, Thermometer, Award, Eye, Heart } from "lucide-react";
+import { Shield, Video, Smartphone, Eye, Moon, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
 const badges = [
-  { icon: Award, label: "15+ Years Experience" },
-  { icon: Video, label: "24/7 Video Monitoring" },
-  { icon: Eye, label: "Live Webcams" },
-  { icon: Thermometer, label: "Climate-Controlled" },
   { icon: Shield, label: "Licensed & Insured" },
-  { icon: Heart, label: "Certified Professionals" },
+  { icon: Video, label: "4K Camera Systems" },
+  { icon: Smartphone, label: "Remote Mobile Access" },
+  { icon: Eye, label: "24/7 Monitoring Support" },
+  { icon: Moon, label: "Night Vision Ready" },
+  { icon: Users, label: "Trained Technicians" },
 ];
 
 const TrustBadges = () => {

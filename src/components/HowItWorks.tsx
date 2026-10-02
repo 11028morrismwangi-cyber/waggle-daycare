@@ -1,24 +1,24 @@
-import { CalendarCheck, Truck, Camera } from "lucide-react";
+import { ClipboardList, PencilRuler, Wrench } from "lucide-react";
 import { motion } from "framer-motion";
 
 const steps = [
   {
-    icon: CalendarCheck,
+    icon: ClipboardList,
     step: "01",
-    title: "Schedule Online",
-    description: "Choose your service and book instantly through our easy online system.",
+    title: "Request a Quote",
+    description: "Tell us about your property and the coverage you need. We respond within 24 hours.",
   },
   {
-    icon: Truck,
+    icon: PencilRuler,
     step: "02",
-    title: "Drop Off Your Pup",
-    description: "Bring them during our convenient morning hours for a smooth check-in.",
+    title: "Site Survey & Design",
+    description: "A technician visits, maps every blind spot and designs the ideal camera layout.",
   },
   {
-    icon: Camera,
+    icon: Wrench,
     step: "03",
-    title: "Play All Day",
-    description: "Watch them have fun via our live webcams and get photo updates throughout the day.",
+    title: "Installation & Support",
+    description: "Clean, professional installation with mobile access set up and ongoing support.",
   },
 ];
 

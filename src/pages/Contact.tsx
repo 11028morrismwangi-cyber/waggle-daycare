@@ -11,12 +11,12 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { MapPin, Phone, Mail, Clock, AlertCircle, Car } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Car } from "lucide-react";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
-  email: z.string().trim().email("Please enter a valid email").max(255),
-  phone: z.string().trim().max(20).optional(),
+  email: z.string().trim().email("Please enter a valid email").max(255).optional().or(z.literal("")),
+  phone: z.string().trim().min(9, "Please enter a valid phone number").max(20),
   subject: z.string().min(1, "Please select a subject"),
   message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000),
 });
@@ -24,12 +24,12 @@ const contactSchema = z.object({
 type ContactForm = z.infer<typeof contactSchema>;
 
 const subjects = [
+  "Request a Quote",
+  "CCTV Installation",
+  "Surveillance System",
+  "Alarm & Intercom",
+  "Maintenance & Support",
   "General Inquiry",
-  "Daycare Question",
-  "Boarding Question",
-  "Grooming Appointment",
-  "Training Consultation",
-  "Feedback",
   "Other",
 ];
 
@@ -56,12 +56,12 @@ const Contact = () => {
         <div className="container mx-auto px-4 md:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center max-w-2xl mx-auto">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
-              <Mail className="inline w-4 h-4 mr-1 -mt-0.5" /> Contact Us
+              <Phone className="inline w-4 h-4 mr-1 -mt-0.5" /> Contact Us
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight mb-4">
               We'd Love to <span className="text-primary">Hear From You</span>
             </h1>
-            <p className="text-lg text-muted-foreground">Questions, concerns, or just want to say hi? We're here to help.</p>
+            <p className="text-lg text-muted-foreground">Questions, concerns, or ready for a free site survey? We're here to help.</p>
           </motion.div>
         </div>
       </section>
@@ -79,8 +79,8 @@ const Contact = () => {
                       <MapPin className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">Address</p>
-                      <p className="text-sm text-muted-foreground">4521 Wagging Trail Blvd, Sunnyville, CA 94086</p>
+                      <p className="font-medium text-foreground">Location</p>
+                      <p className="text-sm text-muted-foreground">Nairobi, Kenya</p>
                     </div>
                   </div>
                   <div className="flex gap-3 items-start">
@@ -89,7 +89,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Phone</p>
-                      <p className="text-sm text-muted-foreground">(555) 123-PAWS</p>
+                      <a href="tel:254796497698" className="text-sm text-muted-foreground hover:text-primary transition-colors">+254 796 497 698</a>
                     </div>
                   </div>
                   <div className="flex gap-3 items-start">
@@ -98,16 +98,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Email</p>
-                      <p className="text-sm text-muted-foreground">hello@happytailsresort.com</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-3 items-start">
-                    <div className="w-10 h-10 rounded-xl bg-destructive/10 flex items-center justify-center shrink-0">
-                      <AlertCircle className="w-5 h-5 text-destructive" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground">Emergency Line</p>
-                      <p className="text-sm text-muted-foreground">(555) 123-9111 (after hours)</p>
+                      <a href="mailto:info@cognitivevision.co.ke" className="text-sm text-muted-foreground hover:text-primary transition-colors">info@cognitivevision.co.ke</a>
                     </div>
                   </div>
                 </div>
@@ -118,7 +109,7 @@ const Contact = () => {
                 <div className="bg-card rounded-2xl shadow-card overflow-hidden">
                   <table className="w-full text-sm">
                     <tbody>
-                      {[["Monday–Friday", "7:00 AM – 7:00 PM"], ["Saturday", "8:00 AM – 6:00 PM"], ["Sunday", "Closed"]].map(([day, hours]) => (
+                      {[["Monday – Saturday", "8:00 AM – 5:00 PM"], ["Sunday", "Closed"]].map(([day, hours]) => (
                         <tr key={day} className="border-b border-border last:border-0">
                           <td className="p-3 font-medium text-foreground">{day}</td>
                           <td className="p-3 text-muted-foreground text-right">{hours}</td>
@@ -132,8 +123,8 @@ const Contact = () => {
               <div className="flex gap-3 items-start p-4 rounded-2xl bg-muted">
                 <Car className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium text-foreground text-sm">Parking</p>
-                  <p className="text-sm text-muted-foreground">Free parking lot with 20 spots. Enter from Wagging Trail Blvd. Drive-through drop-off lane available.</p>
+                  <p className="font-medium text-foreground text-sm">Service Area</p>
+                  <p className="text-sm text-muted-foreground">Nairobi and surrounding areas. We travel further afield for larger projects — contact us with your location.</p>
                 </div>
               </div>
             </motion.div>
@@ -150,15 +141,16 @@ const Contact = () => {
                       {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email *</Label>
-                      <Input id="email" type="email" placeholder="you@example.com" {...register("email")} />
-                      {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
+                      <Label htmlFor="phone">Phone *</Label>
+                      <Input id="phone" type="tel" placeholder="+254 7XX XXX XXX" {...register("phone")} />
+                      {errors.phone && <p className="text-sm text-destructive">{errors.phone.message}</p>}
                     </div>
                   </div>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone (optional)</Label>
-                      <Input id="phone" type="tel" placeholder="(555) 000-0000" {...register("phone")} />
+                      <Label htmlFor="email">Email (optional)</Label>
+                      <Input id="email" type="email" placeholder="you@example.com" {...register("email")} />
+                      {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
                     </div>
                     <div className="space-y-2">
                       <Label>Subject *</Label>

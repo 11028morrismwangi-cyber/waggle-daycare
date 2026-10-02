@@ -1,47 +1,47 @@
 import { Link } from "react-router-dom";
-import { Sun, Moon, Scissors, GraduationCap, ArrowRight } from "lucide-react";
+import { Video, Eye, Bell, Wrench, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import daycareImg from "@/assets/hero-dogs.jpg";
-import boardingImg from "@/assets/boarding-suite.jpg";
-import groomingImg from "@/assets/grooming.jpg";
-import trainingImg from "@/assets/training.jpg";
+import cctvImg from "@/assets/cctv-install.jpg";
+import surveillanceImg from "@/assets/surveillance.jpg";
+import alarmImg from "@/assets/alarm-intercom.jpg";
+import maintenanceImg from "@/assets/maintenance.jpg";
 
 const services = [
   {
-    icon: Sun,
-    title: "Daycare",
-    description: "Supervised group play and socialization in our climate-controlled facility.",
-    price: "Starting at $35/day",
-    image: daycareImg,
+    icon: Video,
+    title: "CCTV Installation",
+    description: "Strategic placement of high-definition cameras with night vision and remote playback.",
+    price: "Free site survey",
+    image: cctvImg,
     link: "/daycare",
     color: "bg-brand-orange-light",
   },
   {
-    icon: Moon,
-    title: "Boarding",
-    description: "Overnight care with all-day play included in cozy private suites.",
-    price: "Starting at $55/night",
-    image: boardingImg,
+    icon: Eye,
+    title: "Surveillance Systems",
+    description: "NVR recording systems with high-capacity storage for months of continuous footage.",
+    price: "Custom quote",
+    image: surveillanceImg,
     link: "/boarding",
     color: "bg-brand-sky-light",
   },
   {
-    icon: Scissors,
-    title: "Grooming",
-    description: "Baths, trims, and spa treatments to keep your pet looking their best.",
-    price: "Starting at $45",
-    image: groomingImg,
+    icon: Bell,
+    title: "Alarm & Intercom",
+    description: "Motion sensors, video doorbells and intercoms with instant smartphone alerts.",
+    price: "Custom quote",
+    image: alarmImg,
     link: "/grooming",
     color: "bg-accent/15",
   },
   {
-    icon: GraduationCap,
-    title: "Training",
-    description: "Positive reinforcement programs for puppies and adult dogs.",
-    price: "Starting at $75/session",
-    image: trainingImg,
+    icon: Wrench,
+    title: "Maintenance",
+    description: "Scheduled health checks, camera cleaning, cable testing and firmware updates.",
+    price: "Flexible plans",
+    image: maintenanceImg,
     link: "/training",
-    color: "bg-brand-purple/10",
+    color: "bg-primary/10",
   },
 ];
 
@@ -57,10 +57,10 @@ const ServicesSection = () => {
         >
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Services</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2">
-            Everything Your Pet Needs
+            Everything You Need to Stay Secure
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
-            From fun-filled daycare to luxurious boarding, we provide comprehensive care for your furry family members.
+            From a single home camera to a full commercial surveillance network, we design, install and maintain systems across Nairobi.
           </p>
         </motion.div>
 
