@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Video, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -32,7 +31,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50-all duration-300 ${
         scrolled ? "bg-card/95 backdrop-blur-md shadow-card" : "bg-card/80 backdrop-blur-sm"
       }`}
     >
@@ -40,7 +39,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <Video className="w-8 h-8 text-primary transition-transform group-hover:scale-110" />
+            <Video className="w-8 h-8 text-primary-transform group-hover:scale-110" />
             <span className="text-base md:text-lg font-bold tracking-tight text-foreground uppercase">
               Cognitive <span className="text-primary">Camera Vision</span>
             </span>
@@ -52,7 +51,7 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-3 py-2 rounded-lg text-sm font-medium-colors ${
                   location.pathname === link.path
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -65,7 +64,7 @@ const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:254796497698" className="flex items-center gap-1.5 text-sm whitespace-nowrap text-muted-foreground hover:text-foreground transition-colors">
+            <a href="tel:254796497698" className="flex items-center gap-1.5 text-sm whitespace-nowrap text-muted-foreground hover:text-foreground-colors">
               <Phone className="w-4 h-4" />
               +254 796 497 698
             </a>
@@ -77,7 +76,7 @@ const Navbar = () => {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg text-foreground hover:bg-muted transition-colors"
+            className="lg:hidden p-2 rounded-lg text-foreground hover:bg-muted-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -88,10 +87,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
+          <div
             className="lg:hidden bg-card border-t border-border overflow-hidden"
           >
             <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
@@ -99,7 +95,7 @@ const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-lg text-sm font-medium-colors ${
                     location.pathname === link.path
                       ? "text-primary bg-primary/10"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -114,7 +110,7 @@ const Navbar = () => {
                 </Button>
               </div>
             </nav>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </header>

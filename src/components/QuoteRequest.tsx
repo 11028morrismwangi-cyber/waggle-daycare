@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -79,7 +78,7 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
 
       <section className="pt-20 pb-16 md:pt-28 md:pb-24">
         <div className="container mx-auto px-4 md:px-8 max-w-2xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <div>
             <div className="text-center mb-8">
               <ClipboardList className="w-10 h-10 text-primary mx-auto mb-2" />
               <h1 className="text-3xl md:text-4xl font-bold text-foreground">Request a Quote</h1>
@@ -163,7 +162,7 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
                 </Button>
               </form>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

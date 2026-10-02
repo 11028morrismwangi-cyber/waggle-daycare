@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Video, Eye, Bell, Wrench, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
 import cctvImg from "@/assets/cctv-install.jpg";
 import surveillanceImg from "@/assets/surveillance.jpg";
 import alarmImg from "@/assets/alarm-intercom.jpg";
@@ -49,10 +48,7 @@ const ServicesSection = () => {
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="text-center mb-14"
         >
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Services</span>
@@ -62,26 +58,22 @@ const ServicesSection = () => {
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
             From a single home camera to a full commercial surveillance network, we design, install and maintain systems across Nairobi.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, i) => (
-            <motion.div
+            <div
               key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
             >
               <Link
                 to={service.link}
-                className="group block bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden hover:-translate-y-2"
+                className="group block bg-card rounded-2xl shadow-card hover:shadow-card-hover-all duration-300 overflow-hidden hover:-translate-y-2"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105-transform duration-500"
                   />
                   <div className={`absolute top-4 left-4 w-10 h-10 ${service.color} rounded-full flex items-center justify-center`}>
                     <service.icon className="w-5 h-5 text-foreground" />
@@ -92,11 +84,11 @@ const ServicesSection = () => {
                   <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{service.description}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-primary font-semibold text-sm">{service.price}</span>
-                    <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1-transform" />
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

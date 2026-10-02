@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -62,7 +61,7 @@ const Boarding = () => {
 
       <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-secondary/10 via-background to-primary/5">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
+          <div className="max-w-3xl">
             <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-sm font-semibold mb-4">
               <Eye className="inline w-4 h-4 mr-1 -mt-0.5" /> Surveillance Systems
             </span>
@@ -75,20 +74,20 @@ const Boarding = () => {
             <Button variant="brand-secondary" size="lg" asChild>
               <Link to="/book-boarding">Request a Quote</Link>
             </Button>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Included */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <div className="text-center mb-12">
             <span className="text-sm font-semibold uppercase tracking-wider text-secondary">Every System Includes</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">Recording Done Right</h2>
-          </motion.div>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {includedServices.map((s, i) => (
-              <motion.div key={s.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+              <div key={s.title}
                 className="flex gap-4 p-6 rounded-2xl bg-card shadow-card">
                 <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
                   <s.icon className="w-6 h-6 text-secondary" />
@@ -97,7 +96,7 @@ const Boarding = () => {
                   <h3 className="font-semibold text-foreground">{s.title}</h3>
                   <p className="text-sm text-muted-foreground mt-1">{s.desc}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -106,13 +105,13 @@ const Boarding = () => {
       {/* Systems */}
       <section className="py-16 md:py-24 bg-warm-section">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <div className="text-center mb-12">
             <span className="text-sm font-semibold uppercase tracking-wider text-secondary">Choose Your System</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">Surveillance Options</h2>
-          </motion.div>
+          </div>
           <div className="grid md:grid-cols-3 gap-6">
             {systems.map((system, i) => (
-              <motion.div key={system.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
+              <div key={system.name}
                 className={`relative bg-card rounded-2xl shadow-card p-8 ${system.popular ? "ring-2 ring-secondary" : ""}`}>
                 {system.popular && (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-bold">Most Requested</span>
@@ -129,7 +128,7 @@ const Boarding = () => {
                 <Button variant={system.popular ? "brand-secondary" : "brand"} className="w-full" asChild>
                   <Link to="/book-boarding">Request a Quote</Link>
                 </Button>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -139,7 +138,7 @@ const Boarding = () => {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-2 gap-12">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <div>
               <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2"><Plus className="w-5 h-5 text-primary" /> Optional Upgrades</h3>
               <div className="space-y-3">
                 {addOns.map((a) => (
@@ -149,8 +148,8 @@ const Boarding = () => {
                   </div>
                 ))}
               </div>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>
+            </div>
+            <div>
               <h3 className="text-2xl font-bold text-foreground mb-6">Support Levels</h3>
               <div className="bg-card rounded-2xl shadow-card overflow-hidden">
                 <table className="w-full">
@@ -165,7 +164,7 @@ const Boarding = () => {
                   </tbody>
                 </table>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

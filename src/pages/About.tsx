@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Navbar from "@/components/Navbar";
@@ -41,7 +40,7 @@ const About = () => {
 
       <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
+          <div className="max-w-3xl">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
               <Video className="inline w-4 h-4 mr-1 -mt-0.5" /> About Us
             </span>
@@ -51,40 +50,40 @@ const About = () => {
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
               Cognitive Camera Vision is a Nairobi-based CCTV installation company making professional-grade surveillance accessible to every home and business in Kenya.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Mission */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center">
             <ShieldCheck className="w-10 h-10 text-primary mx-auto mb-4" />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Mission</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
               To protect every home and business we serve with the highest standard of surveillance — installed by certified technicians, backed by genuine equipment, and supported long after the cameras go up. We believe peace of mind should never be a luxury.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Values */}
       <section className="py-16 md:py-24 bg-warm-section">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <div className="text-center mb-12">
             <span className="text-sm font-semibold uppercase tracking-wider text-primary">Our Values</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">What Sets Us Apart</h2>
-          </motion.div>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((t, i) => (
-              <motion.div key={t.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+              <div key={t.name}
                 className="bg-card rounded-2xl shadow-card p-6 text-center">
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
                   <t.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground">{t.name}</h3>
                 <p className="text-sm text-muted-foreground mt-2">{t.desc}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -93,20 +92,20 @@ const About = () => {
       {/* Guarantees */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <div className="text-center mb-12">
             <span className="text-sm font-semibold uppercase tracking-wider text-primary">Our Guarantees</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">Your Peace of Mind</h2>
-          </motion.div>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {guarantees.map((s, i) => (
-              <motion.div key={s.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+              <div key={s.title}
                 className="bg-card rounded-2xl shadow-card p-6 text-center">
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
                   <s.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">{s.title}</h3>
                 <p className="text-sm text-muted-foreground">{s.desc}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -115,11 +114,11 @@ const About = () => {
       {/* FAQ */}
       <section className="py-16 md:py-24 bg-warm-section">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <div className="text-center mb-12">
             <span className="text-sm font-semibold uppercase tracking-wider text-primary">FAQ</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">Frequently Asked Questions</h2>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          </div>
+          <div>
             <Accordion type="single" collapsible className="bg-card rounded-2xl shadow-card p-2">
               {faqs.map((faq, i) => (
                 <AccordionItem key={i} value={`faq-${i}`} className="border-border px-4">
@@ -128,7 +127,7 @@ const About = () => {
                 </AccordionItem>
               ))}
             </Accordion>
-          </motion.div>
+          </div>
           <div className="text-center mt-10">
             <p className="text-muted-foreground mb-4">Still have questions?</p>
             <Button variant="brand" size="lg" asChild>

@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -16,7 +15,7 @@ const includedServices = [
 ];
 
 const process = [
-  { time: "Step 1", activity: "Site Survey — we visit your property, map blind spots and recommend the best camera layout" },
+  { time: "Step 1", activity: "Site Survey — we visit your property, map blind spots and recommend the best camera" },
   { time: "Step 2", activity: "System Design — a tailored quotation with the exact cameras and storage you need" },
   { time: "Step 3", activity: "Installation — professional mounting, concealed cabling and full configuration" },
   { time: "Step 4", activity: "Handover — mobile app setup, recording tests and user training" },
@@ -49,7 +48,7 @@ const Daycare = () => {
       {/* Hero */}
       <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/10 via-background to-secondary/5">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
+          <div className="max-w-3xl">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
               <Video className="inline w-4 h-4 mr-1 -mt-0.5" /> Installation Services
             </span>
@@ -62,21 +61,21 @@ const Daycare = () => {
             <Button variant="brand" size="lg" asChild>
               <Link to="/book-daycare">Get a Quote</Link>
             </Button>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Included Services */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <div className="text-center mb-12">
             <span className="text-sm font-semibold uppercase tracking-wider text-primary">What's Included</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">Every Installation Covers It All</h2>
-          </motion.div>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {includedServices.map((s, i) => (
-              <motion.div key={s.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                className="flex gap-4 p-6 rounded-2xl bg-card shadow-card hover:shadow-card-hover transition-all">
+              <div key={s.title}
+                className="flex gap-4 p-6 rounded-2xl bg-card shadow-card hover:shadow-card-hover-all">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                   <s.icon className="w-6 h-6 text-primary" />
                 </div>
@@ -84,7 +83,7 @@ const Daycare = () => {
                   <h3 className="font-semibold text-foreground">{s.title}</h3>
                   <p className="text-sm text-muted-foreground mt-1">{s.desc}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -93,13 +92,13 @@ const Daycare = () => {
       {/* Process */}
       <section className="py-16 md:py-24 bg-warm-section">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <div className="text-center mb-12">
             <span className="text-sm font-semibold uppercase tracking-wider text-primary">Our Process</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">From Survey to Support</h2>
-          </motion.div>
+          </div>
           <div className="max-w-2xl mx-auto">
             {process.map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
+              <div key={i}
                 className="flex gap-4 items-start relative pb-6 last:pb-0">
                 <div className="flex flex-col items-center">
                   <div className="w-3 h-3 rounded-full bg-primary shrink-0 mt-1.5" />
@@ -109,7 +108,7 @@ const Daycare = () => {
                   <span className="text-sm font-semibold text-primary whitespace-nowrap w-20">{item.time}</span>
                   <span className="text-foreground">{item.activity}</span>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -118,18 +117,18 @@ const Daycare = () => {
       {/* We Install */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <div className="text-center mb-12">
             <span className="text-sm font-semibold uppercase tracking-wider text-primary">What We Install</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">Systems for Every Property</h2>
-          </motion.div>
+          </div>
           <div className="max-w-2xl mx-auto bg-card rounded-2xl shadow-card p-8">
             <div className="space-y-4">
               {requirements.map((req, i) => (
-                <motion.div key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                <div key={i}
                   className="flex gap-3 items-start">
                   <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <span className="text-foreground">{req}</span>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -139,14 +138,14 @@ const Daycare = () => {
       {/* Packages */}
       <section className="py-16 md:py-24 bg-warm-section">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <div className="text-center mb-12">
             <span className="text-sm font-semibold uppercase tracking-wider text-primary">System Packages</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">Solutions for Every Budget</h2>
-          </motion.div>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {packages.map((plan, i) => (
-              <motion.div key={plan.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                className="relative bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all p-6">
+              <div key={plan.name}
+                className="relative bg-card rounded-2xl shadow-card hover:shadow-card-hover-all p-6">
                 {plan.badge && (
                   <span className="absolute -top-3 right-4 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold">{plan.badge}</span>
                 )}
@@ -168,7 +167,7 @@ const Daycare = () => {
                 <Button variant="brand" className="w-full" asChild>
                   <Link to="/book-daycare">Request a Quote</Link>
                 </Button>
-              </motion.div>
+              </div>
             ))}
           </div>
           <p className="text-center text-sm text-muted-foreground mt-8 flex items-center justify-center gap-2">
