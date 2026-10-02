@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Navbar from "@/components/Navbar";
@@ -46,7 +45,7 @@ const Grooming = () => {
 
       <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
+          <div className="max-w-3xl">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
               <Bell className="inline w-4 h-4 mr-1 -mt-0.5" /> Alarm & Intercom
             </span>
@@ -59,18 +58,18 @@ const Grooming = () => {
             <Button variant="brand" size="lg" asChild>
               <Link to="/contact">Request a Consultation</Link>
             </Button>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Services Accordion */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8 max-w-3xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <div className="text-center mb-12">
             <span className="text-sm font-semibold uppercase tracking-wider text-primary">Our Services</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">What We Install</h2>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          </div>
+          <div>
             <Accordion type="single" collapsible className="bg-card rounded-2xl shadow-card p-2">
               {services.map((s) => (
                 <AccordionItem key={s.name} value={s.name} className="border-border px-4">
@@ -91,23 +90,23 @@ const Grooming = () => {
                 </AccordionItem>
               ))}
             </Accordion>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* System Types */}
       <section className="py-16 md:py-24 bg-warm-section">
         <div className="container mx-auto px-4 md:px-8 max-w-2xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
+          <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-foreground">System Types</h2>
-          </motion.div>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {systemTypes.map((s, i) => (
-              <motion.div key={s.label} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+              <div key={s.label}
                 className="text-center p-4 rounded-2xl bg-card shadow-card">
                 <div className="font-semibold text-foreground">{s.label}</div>
                 <div className="text-sm text-muted-foreground">{s.range}</div>
-              </motion.div>
+              </div>
             ))}
           </div>
           <div className="text-center mt-10">

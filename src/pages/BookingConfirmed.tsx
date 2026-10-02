@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
 import { CheckCircle2, ClipboardList, Video, MapPin, Home, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
@@ -23,16 +22,13 @@ const BookingConfirmed = () => {
 
       <section className="pt-28 pb-20 md:pt-36 md:pb-28">
         <div className="container mx-auto px-4 md:px-8 max-w-xl text-center">
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+          <div
             className="mx-auto mb-6 w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center"
           >
             <CheckCircle2 className="w-10 h-10 text-primary" />
-          </motion.div>
+          </div>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+          <div>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Request Received! 🎉</h1>
             <p className="text-muted-foreground text-lg mb-8">
               {state?.name
@@ -40,13 +36,10 @@ const BookingConfirmed = () => {
                 : "We'll reach out within 24 hours with your quotation."}{" "}
               A free site survey will be scheduled at your convenience.
             </p>
-          </motion.div>
+          </div>
 
           {state && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
+            <div
               className="bg-card rounded-2xl shadow-card p-6 mb-8 text-left space-y-3"
             >
               {state.name && (
@@ -73,13 +66,10 @@ const BookingConfirmed = () => {
                   <span className="font-medium text-foreground">{state.location}</span>
                 </div>
               )}
-            </motion.div>
+            </div>
           )}
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
+          <div
             className="flex flex-col sm:flex-row gap-3 justify-center"
           >
             <Button variant="brand" size="lg" asChild>
@@ -88,7 +78,7 @@ const BookingConfirmed = () => {
             <Button variant="outline" size="lg" asChild>
               <Link to="/contact">Questions? Contact Us <ArrowRight className="w-4 h-4 ml-1" /></Link>
             </Button>
-          </motion.div>
+          </div>
         </div>
       </section>
 

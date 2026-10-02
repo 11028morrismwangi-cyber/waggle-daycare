@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -54,7 +53,7 @@ const Contact = () => {
 
       <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center max-w-2xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
               <Phone className="inline w-4 h-4 mr-1 -mt-0.5" /> Contact Us
             </span>
@@ -62,7 +61,7 @@ const Contact = () => {
               We'd Love to <span className="text-primary">Hear From You</span>
             </h1>
             <p className="text-lg text-muted-foreground">Questions, concerns, or ready for a free site survey? We're here to help.</p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -70,7 +69,7 @@ const Contact = () => {
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Info */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-2 space-y-8">
               <div>
                 <h3 className="text-xl font-semibold text-foreground mb-4">Get In Touch</h3>
                 <div className="space-y-4">
@@ -89,7 +88,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Phone</p>
-                      <a href="tel:254796497698" className="text-sm text-muted-foreground hover:text-primary transition-colors">+254 796 497 698</a>
+                      <a href="tel:254796497698" className="text-sm text-muted-foreground hover:text-primary">+254 796 497 698</a>
                     </div>
                   </div>
                   <div className="flex gap-3 items-start">
@@ -98,7 +97,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Email</p>
-                      <a href="mailto:info@cognitivevision.co.ke" className="text-sm text-muted-foreground hover:text-primary transition-colors">info@cognitivevision.co.ke</a>
+                      <a href="mailto:info@cognitivevision.co.ke" className="text-sm text-muted-foreground hover:text-primary">info@cognitivevision.co.ke</a>
                     </div>
                   </div>
                 </div>
@@ -127,10 +126,10 @@ const Contact = () => {
                   <p className="text-sm text-muted-foreground">Nairobi and surrounding areas. We travel further afield for larger projects — contact us with your location.</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Form */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="lg:col-span-3">
+            <div className="lg:col-span-3">
               <div className="bg-card rounded-2xl shadow-card p-8">
                 <h3 className="text-xl font-semibold text-foreground mb-6">Send Us a Message</h3>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
@@ -175,7 +174,7 @@ const Contact = () => {
                   </Button>
                 </form>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

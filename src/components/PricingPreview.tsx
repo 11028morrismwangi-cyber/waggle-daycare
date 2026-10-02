@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Check, Home, Store, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
 
 const plans = [
   {
@@ -15,7 +14,7 @@ const plans = [
     name: "Business Surveillance",
     icon: Store,
     price: "Custom quote",
-    features: ["Multi-camera coverage", "NVR with extended storage", "Entry & exit monitoring", "Staff access levels"],
+    features: ["Multi-camera coverage", "NVR with extended storage", "Entry & monitoring", "Staff access levels"],
     popular: true,
   },
   {
@@ -31,10 +30,7 @@ const PricingPreview = () => {
   return (
     <section className="py-20 md:py-28 bg-warm-section">
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="text-center mb-14"
         >
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">Pricing</span>
@@ -42,18 +38,14 @@ const PricingPreview = () => {
             Tailored to Your Property
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            Every property is different — pricing depends on the number of cameras, layout and storage needs. Request a quote and we'll survey your site for free.
+            Every property is different — pricing depends on the number of cameras, and storage needs. Request a quote and we'll survey your site for free.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto items-start">
           {plans.map((plan, i) => (
-            <motion.div
+            <div
               key={plan.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
               className={`relative bg-card rounded-2xl p-8 shadow-card ${
                 plan.popular ? "border-2 border-primary md:-mt-4 md:mb-4" : "border border-border"
               }`}
@@ -85,7 +77,7 @@ const PricingPreview = () => {
               >
                 <Link to="/book-daycare">Request a Quote</Link>
               </Button>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

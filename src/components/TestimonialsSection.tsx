@@ -1,5 +1,4 @@
 import { Star } from "lucide-react";
-import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -26,27 +25,20 @@ const TestimonialsSection = () => {
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="text-center mb-14"
         >
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">Testimonials</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2">
             Trusted Across Nairobi
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {testimonials.map((t, i) => (
-            <motion.div
+            <div
               key={t.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-card rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-shadow duration-300"
+              className="bg-card rounded-2xl p-8 shadow-card hover:shadow-card-hover-shadow duration-300"
             >
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: t.rating }).map((_, j) => (
@@ -58,7 +50,7 @@ const TestimonialsSection = () => {
                 <div className="font-semibold text-foreground text-sm">{t.name}</div>
                 <div className="text-muted-foreground text-xs">{t.role}</div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
