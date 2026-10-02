@@ -67,7 +67,7 @@ const ServicesSection = () => {
             >
               <Link
                 to={service.link}
-                className="group block bg-card rounded-lg shadow-card overflow-hidden"
+                className="group block bg-card rounded-lg shadow-card overflow-hidden hover:shadow-card-hover"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
