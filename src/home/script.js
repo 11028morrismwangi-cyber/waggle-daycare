@@ -49,7 +49,7 @@ navSheet.querySelectorAll('a').forEach(a => a.addEventListener('click', () => se
     let i = 0;
     function attempt() {
       if (i >= extensions.length) return; /* neither video nor any photo found — camera-wall stays visible */
-      const path = `media/hero-background.${extensions[i]}`;
+      const path = `/media/hero-background.${extensions[i]}`;
       const testImg = new Image();
       testImg.onload = () => {
         photo.style.backgroundImage = `url('${path}')`;
@@ -76,7 +76,7 @@ function trySetImage(elementId, baseName) {
   let i = 0;
   function attempt() {
     if (i >= extensions.length) return; /* none found — stays hidden */
-    const path = `media/${baseName}.${extensions[i]}`;
+    const path = `/media/${baseName}.${extensions[i]}`;
     const img = new Image();
     img.onload = () => {
       el.style.backgroundImage = `url('${path}')`;
@@ -99,16 +99,16 @@ trySetImage('environmentPhoto', 'environment-photo');
   if (!marquee || !track) return;
 
   const candidates = [
-    { src: 'media/camera-bullet.png', label: 'Bullet Camera' },
-    { src: 'media/camera-varifocal.png', label: 'Varifocal Bullet' },
-    { src: 'media/camera-dome.png', label: 'Dome Camera' },
-    { src: 'media/camera-turret.png', label: 'Turret Camera' },
-    { src: 'media/camera-ptz.png', label: 'PTZ Camera' },
-    { src: 'media/equipment-dvr.png', label: 'DVR' },
-    { src: 'media/equipment-monitor.png', label: 'Monitor' },
-    { src: 'media/equipment-storage.png', label: 'Storage Disk' },
-    { src: 'media/camera-product-7.png', label: 'Professional Installation' },
-    { src: 'media/camera-product-8.png', label: 'Equipment' },
+    { src: '/media/camera-bullet.png', label: 'Bullet Camera' },
+    { src: '/media/camera-varifocal.png', label: 'Varifocal Bullet' },
+    { src: '/media/camera-dome.png', label: 'Dome Camera' },
+    { src: '/media/camera-turret.png', label: 'Turret Camera' },
+    { src: '/media/camera-ptz.png', label: 'PTZ Camera' },
+    { src: '/media/equipment-dvr.png', label: 'DVR' },
+    { src: '/media/equipment-monitor.png', label: 'Monitor' },
+    { src: '/media/equipment-storage.png', label: 'Storage Disk' },
+    { src: '/media/camera-product-7.png', label: 'Professional Installation' },
+    { src: '/media/camera-product-8.png', label: 'Equipment' },
   ];
 
   function checkOne(c) {
@@ -245,7 +245,7 @@ positionCameraAboveRail();
   let i = 0;
   function tryLoad() {
     if (i >= extensions.length) return; /* no file found — placeholder stays */
-    const path = `media/camera-cutout.${extensions[i]}`;
+    const path = `/media/camera-cutout.${extensions[i]}`;
     const test = new Image();
     test.onload = () => {
       img.src = path;
