@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, PawPrint, Phone } from "lucide-react";
+import { Menu, X, Video, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { label: "Daycare", path: "/daycare" },
-  { label: "Boarding", path: "/boarding" },
-  { label: "Grooming", path: "/grooming" },
-  { label: "Training", path: "/training" },
+  { label: "CCTV", path: "/daycare" },
+  { label: "Surveillance", path: "/boarding" },
+  { label: "Alarms", path: "/grooming" },
+  { label: "Maintenance", path: "/training" },
   { label: "Gallery", path: "/gallery" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
@@ -40,9 +40,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <PawPrint className="w-8 h-8 text-primary transition-transform group-hover:rotate-12" />
-            <span className="text-xl font-bold text-foreground">
-              Pet <span className="text-primary">Daycare</span>
+            <Video className="w-8 h-8 text-primary transition-transform group-hover:scale-110" />
+            <span className="text-base md:text-lg font-bold tracking-tight text-foreground uppercase">
+              Cognitive <span className="text-primary">Camera Vision</span>
             </span>
           </Link>
 
@@ -65,12 +65,12 @@ const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:5551237297" className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a href="tel:254796497698" className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <Phone className="w-4 h-4" />
-              (555) 123-PAWS
+              +254 796 497 698
             </a>
             <Button variant="brand" size="lg" asChild>
-              <Link to="/book-daycare">Book Now</Link>
+              <Link to="/book-daycare">Get a Quote</Link>
             </Button>
           </div>
 
@@ -110,7 +110,7 @@ const Navbar = () => {
               ))}
               <div className="pt-3 border-t border-border mt-2">
                 <Button variant="brand" className="w-full" size="lg" asChild>
-                  <Link to="/book-daycare">Book Now</Link>
+                  <Link to="/book-daycare">Get a Quote</Link>
                 </Button>
               </div>
             </nav>

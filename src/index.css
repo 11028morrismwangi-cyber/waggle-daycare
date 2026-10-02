@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,52 +6,52 @@
 
 @layer base {
   :root {
-    --background: 30 33% 98%;
-    --foreground: 220 20% 12%;
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 12%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 12%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 25 95% 53%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 199 89% 48%;
+    --secondary: 222 47% 11%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 30 20% 95%;
-    --muted-foreground: 220 10% 40%;
+    --muted: 210 16% 93%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 84 61% 44%;
+    --accent: 199 89% 48%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 15% 90%;
-    --input: 30 15% 88%;
-    --ring: 25 95% 53%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Custom tokens */
-    --brand-orange: 25 95% 53%;
-    --brand-orange-deep: 21 90% 40%;
-    --brand-orange-light: 30 93% 85%;
+    /* Custom tokens (legacy keys kept, re-themed to the corporate blue/slate palette) */
+    --brand-orange: 217 91% 60%;
+    --brand-orange-deep: 217 91% 48%;
+    --brand-orange-light: 214 95% 93%;
     --brand-sky: 199 89% 48%;
     --brand-sky-deep: 201 90% 31%;
-    --brand-sky-light: 199 92% 89%;
-    --brand-lime: 84 61% 44%;
-    --brand-purple: 271 81% 56%;
-    --brand-pink: 330 81% 60%;
-    --brand-warm-bg: 35 40% 96%;
-    --brand-cream: 38 50% 94%;
+    --brand-sky-light: 199 92% 93%;
+    --brand-lime: 217 91% 60%;
+    --brand-purple: 222 47% 11%;
+    --brand-pink: 217 91% 60%;
+    --brand-warm-bg: 210 17% 97%;
+    --brand-cream: 214 20% 95%;
 
-    --shadow-card: 0 4px 24px -4px hsl(25 30% 20% / 0.08);
-    --shadow-card-hover: 0 12px 40px -8px hsl(25 30% 20% / 0.15);
-    --shadow-hero: 0 20px 60px -12px hsl(25 60% 30% / 0.25);
+    --shadow-card: 0 4px 24px -4px hsl(222 47% 11% / 0.08);
+    --shadow-card-hover: 0 12px 40px -8px hsl(222 47% 11% / 0.15);
+    --shadow-hero: 0 20px 60px -12px hsl(222 47% 11% / 0.3);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -64,25 +64,25 @@
   }
 
   .dark {
-    --background: 220 20% 8%;
-    --foreground: 30 20% 95%;
-    --card: 220 18% 12%;
-    --card-foreground: 30 20% 95%;
-    --popover: 220 18% 12%;
-    --popover-foreground: 30 20% 95%;
-    --primary: 25 95% 53%;
+    --background: 222 47% 7%;
+    --foreground: 210 20% 95%;
+    --card: 222 40% 10%;
+    --card-foreground: 210 20% 95%;
+    --popover: 222 40% 10%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 199 89% 48%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 220 15% 18%;
-    --muted-foreground: 220 10% 65%;
-    --accent: 84 61% 44%;
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 222 30% 16%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 199 89% 48%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 15% 22%;
-    --input: 220 15% 22%;
-    --ring: 25 95% 53%;
+    --border: 222 25% 20%;
+    --input: 222 25% 20%;
+    --ring: 217 91% 60%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,11 +101,11 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 }
 
@@ -115,7 +115,7 @@
   }
 
   .bg-gradient-hero {
-    background: linear-gradient(135deg, hsl(var(--brand-orange) / 0.9), hsl(var(--brand-orange-deep) / 0.8));
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.9), hsl(217 91% 40% / 0.85));
   }
 
   .bg-warm-section {
