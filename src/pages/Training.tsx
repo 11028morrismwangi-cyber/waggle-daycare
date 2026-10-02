@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Wrench, CheckCircle2, Zap, Award, MessageSquareQuote } from "lucide-react";
+import maintenanceImg from "@/assets/maintenance.jpg";
 
 const plans = [
   { name: "One-Off Service Visit", duration: "Per visit", features: ["Full system health check", "Camera cleaning & lens check", "Cable & connector testing"] },
@@ -26,9 +27,13 @@ const Training = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/10 via-background to-primary/5">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-3xl">
+      <section className="relative overflow-hidden pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/10 via-background to-primary/5">
+        <div className="absolute inset-y-0 right-0 hidden lg:block w-[46%]">
+          <img src={maintenanceImg} alt="Technician servicing an installed CCTV camera" className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-transparent" />
+        </div>
+        <div className="container relative mx-auto px-4 md:px-8">
+          <div className="max-w-3xl lg:max-w-[52%]">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
               <Wrench className="inline w-4 h-4 mr-1 -mt-0.5" /> Maintenance & Support
             </span>
@@ -42,6 +47,7 @@ const Training = () => {
               <Link to="/contact">Request a Consultation</Link>
             </Button>
           </div>
+          <img src={maintenanceImg} alt="Technician servicing an installed CCTV camera" className="mt-10 h-64 w-full rounded-lg object-cover shadow-hero lg:hidden" />
         </div>
       </section>
 

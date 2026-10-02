@@ -4,52 +4,52 @@
 
 @layer base {
   :root {
-    --background: 24 10% 97%;
-    --foreground: 20 14% 8%;
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 20 14% 8%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 20 14% 8%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 16 62% 46%;
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 20 14% 8%;
+    --secondary: 222 47% 11%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 24 8% 91%;
-    --muted-foreground: 20 7% 40%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 40%;
 
-    --accent: 24 45% 33%;
+    --accent: 199 89% 48%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 24 10% 84%;
-    --input: 24 10% 84%;
-    --ring: 16 62% 46%;
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
+    --ring: 221 83% 53%;
 
     --radius: 0.5rem;
 
-    /* Legacy keys retained and mapped to the rusty orange and near-black palette. */
-    --brand-orange: 16 62% 46%;
-    --brand-orange-deep: 14 65% 36%;
-    --brand-orange-light: 20 55% 91%;
-    --brand-sky: 24 45% 33%;
-    --brand-sky-deep: 20 14% 8%;
-    --brand-sky-light: 24 18% 90%;
-    --brand-lime: 16 62% 46%;
-    --brand-purple: 20 14% 8%;
-    --brand-pink: 16 62% 46%;
-    --brand-warm-bg: 24 10% 95%;
-    --brand-cream: 24 8% 92%;
+    /* Legacy keys retained and mapped to the precision cobalt and slate palette. */
+    --brand-orange: 221 83% 53%;
+    --brand-orange-deep: 221 83% 44%;
+    --brand-orange-light: 214 95% 93%;
+    --brand-sky: 199 89% 48%;
+    --brand-sky-deep: 201 90% 31%;
+    --brand-sky-light: 199 92% 93%;
+    --brand-lime: 221 83% 53%;
+    --brand-purple: 222 47% 11%;
+    --brand-pink: 221 83% 53%;
+    --brand-warm-bg: 210 40% 96%;
+    --brand-cream: 214 32% 94%;
 
-    --shadow-card: 0 4px 24px -4px hsl(20 14% 8% / 0.08);
-    --shadow-card-hover: 0 12px 40px -8px hsl(20 14% 8% / 0.15);
-    --shadow-hero: 0 20px 60px -12px hsl(20 14% 8% / 0.3);
+    --shadow-card: 0 8px 24px -12px hsl(222 47% 11% / 0.18);
+    --shadow-card-hover: 0 18px 40px -18px hsl(221 83% 35% / 0.3);
+    --shadow-hero: 0 24px 60px -20px hsl(222 47% 11% / 0.35);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -62,25 +62,25 @@
   }
 
   .dark {
-    --background: 20 14% 6%;
-    --foreground: 24 10% 95%;
-    --card: 20 12% 9%;
-    --card-foreground: 24 10% 95%;
-    --popover: 20 12% 9%;
-    --popover-foreground: 24 10% 95%;
-    --primary: 16 62% 50%;
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+    --card: 222 40% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 40% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 24 10% 95%;
-    --secondary-foreground: 20 14% 8%;
-    --muted: 20 9% 15%;
-    --muted-foreground: 24 7% 66%;
-    --accent: 24 45% 38%;
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 222 30% 16%;
+    --muted-foreground: 215 20% 68%;
+    --accent: 199 89% 48%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
-    --border: 20 8% 20%;
-    --input: 20 8% 20%;
-    --ring: 16 62% 50%;
+    --border: 222 25% 22%;
+    --input: 222 25% 22%;
+    --ring: 217 91% 60%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -126,6 +126,7 @@
 
   .shadow-card {
     box-shadow: var(--shadow-card);
+    border: 1px solid hsl(var(--border));
   }
 
   .shadow-card-hover {

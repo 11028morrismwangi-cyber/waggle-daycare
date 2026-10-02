@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Eye, HardDrive, Smartphone, Bell, CloudUpload, ShieldCheck, CheckCircle2, Plus } from "lucide-react";
+import surveillanceImg from "@/assets/surveillance.jpg";
 
 const includedServices = [
   { icon: HardDrive, title: "NVR Recording", desc: "Continuous recording with secure local storage" },
@@ -59,9 +60,13 @@ const Boarding = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-secondary/10 via-background to-primary/5">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-3xl">
+      <section className="relative overflow-hidden pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-secondary/10 via-background to-primary/5">
+        <div className="absolute inset-y-0 right-0 hidden lg:block w-[46%]">
+          <img src={surveillanceImg} alt="Security control room displaying multiple live camera feeds" className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-transparent" />
+        </div>
+        <div className="container relative mx-auto px-4 md:px-8">
+          <div className="max-w-3xl lg:max-w-[52%]">
             <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-sm font-semibold mb-4">
               <Eye className="inline w-4 h-4 mr-1 -mt-0.5" /> Surveillance Systems
             </span>
@@ -75,6 +80,7 @@ const Boarding = () => {
               <Link to="/book-boarding">Request a Quote</Link>
             </Button>
           </div>
+          <img src={surveillanceImg} alt="Security control room displaying multiple live camera feeds" className="mt-10 h-64 w-full rounded-lg object-cover shadow-hero lg:hidden" />
         </div>
       </section>
 
