@@ -3,21 +3,21 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    name: "Jennifer M.",
-    pet: "Golden Retriever Max",
-    text: "Max absolutely loves his daycare days! He comes home tired and happy. The staff sends photos throughout the day which I love.",
+    name: "James M.",
+    role: "Homeowner, Westlands",
+    text: "The team installed eight cameras in one afternoon. The mobile app access is seamless and the night-time picture quality is incredible.",
+    rating: 5,
+  },
+  {
+    name: "Grace W.",
+    role: "Shop Owner, Eastleigh",
+    text: "They understood exactly what my retail space needed. The footage has already helped resolve an incident — worth every shilling.",
     rating: 5,
   },
   {
     name: "David K.",
-    pet: "Border Collie Luna",
-    text: "Best decision ever! Luna's anxiety has improved so much since starting daycare. She's made so many furry friends.",
-    rating: 5,
-  },
-  {
-    name: "Sarah L.",
-    pet: "Labrador Buddy",
-    text: "The boarding facility is amazing. I can travel knowing Buddy is safe, happy, and getting tons of playtime.",
+    role: "Facilities Manager, Industrial Area",
+    text: "Their maintenance plan keeps our 40-camera system running without fail. Fast response whenever we call, every time.",
     rating: 5,
   },
 ];
@@ -34,7 +34,7 @@ const TestimonialsSection = () => {
         >
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">Testimonials</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2">
-            Happy Pet Parents
+            Trusted Across Nairobi
           </h2>
         </motion.div>
 
@@ -56,7 +56,7 @@ const TestimonialsSection = () => {
               <p className="text-foreground mb-6 leading-relaxed italic">"{t.text}"</p>
               <div>
                 <div className="font-semibold text-foreground text-sm">{t.name}</div>
-                <div className="text-muted-foreground text-xs">with {t.pet}</div>
+                <div className="text-muted-foreground text-xs">{t.role}</div>
               </div>
             </motion.div>
           ))}

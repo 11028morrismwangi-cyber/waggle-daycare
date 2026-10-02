@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { PawPrint, MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter } from "lucide-react";
+import { Video, MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -9,13 +9,13 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <PawPrint className="w-7 h-7 text-primary" />
-              <span className="text-lg font-bold text-primary-foreground">
-                Pet Daycare
+              <Video className="w-7 h-7 text-primary" />
+              <span className="text-base font-bold uppercase tracking-tight text-primary-foreground">
+                Cognitive Camera Vision
               </span>
             </Link>
             <p className="text-sm leading-relaxed mb-6 text-primary-foreground/60">
-              Where every paw gets to play. Safe, social, and supervised fun for your furry family.
+              Smart vision. Total security. Professional CCTV installation and surveillance systems across Nairobi.
             </p>
             <div className="flex gap-3">
               {[Facebook, Instagram, Twitter].map((Icon, i) => (
@@ -32,15 +32,15 @@ const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-primary" />
-                <span>4521 Wagging Trail Blvd, Sunnyville, CA 94086</span>
+                <span>Nairobi, Kenya</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 shrink-0 text-primary" />
-                <span>(555) 123-PAWS</span>
+                <a href="tel:254796497698" className="hover:text-primary transition-colors">+254 796 497 698</a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 shrink-0 text-primary" />
-                <span>hello@happytailsresort.com</span>
+                <a href="mailto:info@cognitivevision.co.ke" className="hover:text-primary transition-colors">info@cognitivevision.co.ke</a>
               </div>
             </div>
           </div>
@@ -49,9 +49,16 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-primary-foreground mb-4">Quick Links</h4>
             <div className="space-y-2 text-sm">
-              {["Daycare", "Boarding", "Grooming", "Training", "Gallery", "About"].map((link) => (
-                <Link key={link} to={`/${link.toLowerCase()}`} className="block hover:text-primary transition-colors">
-                  {link}
+              {[
+                { label: "CCTV Installation", path: "/daycare" },
+                { label: "Surveillance Systems", path: "/boarding" },
+                { label: "Alarm & Intercom", path: "/grooming" },
+                { label: "Maintenance", path: "/training" },
+                { label: "Gallery", path: "/gallery" },
+                { label: "About", path: "/about" },
+              ].map((link) => (
+                <Link key={link.path} to={link.path} className="block hover:text-primary transition-colors">
+                  {link.label}
                 </Link>
               ))}
             </div>
@@ -64,8 +71,7 @@ const Footer = () => {
               <div className="flex items-start gap-2">
                 <Clock className="w-4 h-4 mt-0.5 shrink-0 text-primary" />
                 <div>
-                  <p>Mon–Fri: 7:00 AM – 7:00 PM</p>
-                  <p>Sat: 8:00 AM – 6:00 PM</p>
+                  <p>Mon–Sat: 8:00 AM – 5:00 PM</p>
                   <p>Sun: Closed</p>
                 </div>
               </div>
@@ -75,7 +81,7 @@ const Footer = () => {
       </div>
       <div className="border-t border-primary-foreground/10">
         <div className="container mx-auto px-4 md:px-8 py-5 text-center text-xs text-primary-foreground/40">
-          © 2024 Pet Daycare. All rights reserved.
+          © 2026 Cognitive Camera Vision. All rights reserved.
         </div>
       </div>
     </footer>
