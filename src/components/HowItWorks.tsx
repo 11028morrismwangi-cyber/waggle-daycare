@@ -1,24 +1,23 @@
-import { ClipboardList, PencilRuler, Wrench } from "lucide-react";
-import { motion } from "framer-motion";
+import { Eye, BellRing, LayoutDashboard } from "lucide-react";
 
 const steps = [
   {
-    icon: ClipboardList,
+    icon: Eye,
     step: "01",
-    title: "Request a Quote",
-    description: "Tell us about your property and the coverage you need. We respond within 24 hours.",
+    title: "Cameras That See",
+    description: "Our intelligence layer watches every feed in real time and understands what is happening — not just recording it for later.",
   },
   {
-    icon: PencilRuler,
+    icon: LayoutDashboard,
     step: "02",
-    title: "Site Survey & Design",
-    description: "A technician visits, maps every blind spot and designs the ideal camera layout.",
+    title: "Every Feed, Categorized",
+    description: "Even across 100+ cameras, each feed is sorted on one dashboard: Emergency, Risk, Observe or Normal.",
   },
   {
-    icon: Wrench,
+    icon: BellRing,
     step: "03",
-    title: "Installation & Support",
-    description: "Clean, professional installation with mobile access set up and ongoing support.",
+    title: "Attention Where It Matters",
+    description: "Your control room focuses on Emergencies and Risks only — with instant notifications the moment something happens.",
   },
 ];
 
@@ -26,28 +25,19 @@ const HowItWorks = () => {
   return (
     <section className="py-20 md:py-28 bg-warm-section">
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-14"
-        >
+        <div className="text-center mb-14">
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">How It Works</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2">
-            Three Simple Steps
+            Intelligence, Not Just Footage
           </h2>
-        </motion.div>
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+            Nobody can monitor 20+ cameras. Not really. Not at 3am. Our system does it for you.
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {steps.map((step, i) => (
-            <motion.div
-              key={step.step}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15, duration: 0.5 }}
-              className="text-center relative"
-            >
+            <div key={step.step} className="text-center relative">
               <div className="relative inline-flex items-center justify-center mb-6">
                 <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
                   <step.icon className="w-9 h-9 text-primary" />
@@ -61,7 +51,7 @@ const HowItWorks = () => {
               {i < steps.length - 1 && (
                 <div className="hidden md:block absolute top-10 right-0 translate-x-1/2 w-16 border-t-2 border-dashed border-primary/30" />
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
