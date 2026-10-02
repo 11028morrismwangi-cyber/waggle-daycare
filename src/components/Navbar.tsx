@@ -76,7 +76,7 @@ const Navbar = () => {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg text-foreground hover:bg-muted-colors"
+            className="lg:hidden p-2 rounded-lg text-foreground hover:bg-muted"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
