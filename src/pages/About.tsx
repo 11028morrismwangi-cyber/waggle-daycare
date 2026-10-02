@@ -4,29 +4,29 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Video, ShieldCheck, Award, MapPin, BadgeCheck, Wrench } from "lucide-react";
+import { Video, ShieldCheck, BrainCircuit, MapPin, Cable, Wrench } from "lucide-react";
 
 const values = [
-  { icon: Award, name: "Certified Technicians", desc: "Trained, uniformed professionals who install every system to manufacturer standards." },
-  { icon: BadgeCheck, name: "Genuine Equipment", desc: "We only supply genuine cameras, recorders and accessories with full warranty coverage." },
-  { icon: MapPin, name: "Local Nairobi Support", desc: "Based in Nairobi and serving the surrounding areas — help is never far away." },
-  { icon: Wrench, name: "After-Sales Care", desc: "Installation is just the start. We offer maintenance plans that keep you protected." },
+  { icon: BrainCircuit, name: "Intelligence First", desc: "We design around the events, risks and operational questions your cameras need to recognize." },
+  { icon: Cable, name: "Built to Integrate", desc: "Where compatible, we retain your existing CCTV infrastructure and add intelligence around it." },
+  { icon: MapPin, name: "Local Nairobi Support", desc: "Our Nairobi team designs solutions around the realities of your site and control room." },
+  { icon: Wrench, name: "Long-Term Care", desc: "We keep cameras, recording, alerts and analysis working together after handover." },
 ];
 
 const guarantees = [
-  { icon: ShieldCheck, title: "Workmanship Warranty", desc: "Every installation is covered by our workmanship warranty" },
-  { icon: Video, title: "Clean Installation", desc: "Concealed cabling and tidy mounting, every single time" },
-  { icon: BadgeCheck, title: "No Hidden Charges", desc: "The quotation you approve is the price you pay" },
-  { icon: Award, title: "User Training", desc: "Full handover training so your team and family know the system" },
+  { icon: ShieldCheck, title: "Priority, Not Noise", desc: "Emergency and Risk feeds are brought forward for immediate attention" },
+  { icon: Video, title: "Useful Information", desc: "Footage becomes alerts, status and insight instead of an archive alone" },
+  { icon: Cable, title: "Existing System Value", desc: "Compatible cameras and infrastructure are retained wherever possible" },
+  { icon: BrainCircuit, title: "Tailored Analysis", desc: "Detection is configured around your specific security and operational needs" },
 ];
 
 const faqs = [
-  { q: "Do you charge for a site survey?", a: "No. Within Nairobi, the site survey is free. We visit your property, assess blind spots and camera placement, then provide a detailed written quotation." },
-  { q: "How long does an installation take?", a: "Most home systems are installed in a single day. Larger business and estate systems typically take one to three days depending on the number of cameras and cabling needed." },
-  { q: "Can I view my cameras on my phone?", a: "Yes. Every system we install includes remote mobile access. We configure the app on your phone and train you on live viewing and playback." },
+  { q: "Can you work with cameras already installed?", a: "Yes, where the existing equipment is compatible. Up to 96% of an existing system can be retained, allowing us to add intelligence without an unnecessary full replacement." },
+  { q: "What does the intelligence layer do?", a: "It processes live camera feeds, analyses activity and classifies what needs attention as Emergency, Risk, Observe or Normal. Alerts can then be sent by SMS or email." },
+  { q: "Can I view my cameras remotely?", a: "Remote viewing can be configured as part of the solution, alongside live status, playback and priority alerts." },
   { q: "What happens during a power cut?", a: "We offer backup power and solar options so your system keeps recording through outages. We can recommend the right backup during the site survey." },
-  { q: "How is footage stored?", a: "Footage is recorded on a secure NVR at your property, typically retaining 1–3 months depending on the drives selected. Optional cloud backup keeps critical footage off-site." },
-  { q: "Do you provide a warranty?", a: "Yes. Equipment carries the full manufacturer warranty, and our installations are covered by a workmanship warranty. Details are included with every quotation." },
+  { q: "Does this replace normal recording?", a: "No. Your DVR or NVR can continue recording while the intelligence layer processes feeds for analytics, dashboard status and alerts." },
+  { q: "Is a subscription compulsory?", a: "No. There are zero mandatory subscriptions. The system can provide continuous footage analysis and daily email reports without a compulsory recurring fee." },
   { q: "Which areas do you cover?", a: "Nairobi and its surroundings. We can travel further afield for larger projects — just contact us with your location." },
   { q: "Do you offer maintenance?", a: "Yes. We offer one-off service visits and monthly or quarterly care plans that include health checks, cleaning, firmware updates and priority response." },
 ];
@@ -48,7 +48,7 @@ const About = () => {
               Smart Vision. <span className="text-primary">Total Security.</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Cognitive Camera Vision is a Nairobi-based CCTV installation company making professional-grade surveillance accessible to every home and business in Kenya.
+              Cognitive Camera Vision is a Nairobi-based surveillance technology company. We add an intelligence layer that helps cameras see, understand and identify which feed needs attention now.
             </p>
           </div>
         </div>
@@ -61,7 +61,7 @@ const About = () => {
             <ShieldCheck className="w-10 h-10 text-primary mx-auto mb-4" />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Mission</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              To protect every home and business we serve with the highest standard of surveillance — installed by certified technicians, backed by genuine equipment, and supported long after the cameras go up. We believe peace of mind should never be a luxury.
+              To turn CCTV from a passive record of the past into a live source of useful information. We help security teams focus on emergencies and risks instead of asking people to watch every screen, every minute.
             </p>
           </div>
         </div>
@@ -93,8 +93,8 @@ const About = () => {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
-            <span className="text-sm font-semibold uppercase tracking-wider text-primary">Our Guarantees</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">Your Peace of Mind</h2>
+            <span className="text-sm font-semibold uppercase tracking-wider text-primary">Our Approach</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">CCTV That Helps You Act</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {guarantees.map((s, i) => (

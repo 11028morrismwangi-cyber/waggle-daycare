@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 ${
         scrolled ? "bg-card/95 backdrop-blur-md shadow-card" : "bg-card/80 backdrop-blur-sm"
       }`}
     >

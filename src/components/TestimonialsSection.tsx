@@ -2,7 +2,7 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "James M.",
+    name: "Mbogo J.",
     role: "Homeowner, Dagoreti",
     text: "The team installed eight cameras at our home. I particularly enjoy the mobile app access — it is seamless, and the night-time picture quality is incredible.",
     rating: 5,
