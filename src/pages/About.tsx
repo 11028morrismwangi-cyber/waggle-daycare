@@ -9,7 +9,7 @@ import { Video, ShieldCheck, BrainCircuit, MapPin, Cable, Wrench } from "lucide-
 const values = [
   { icon: BrainCircuit, name: "Intelligence First", desc: "We design around the events, risks and operational questions your cameras need to recognize." },
   { icon: Cable, name: "Built to Integrate", desc: "Where compatible, we retain your existing CCTV infrastructure and add intelligence around it." },
-  { icon: MapPin, name: "Local Nairobi Support", desc: "Our Nairobi team designs solutions around the realities of your site and control room." },
+  { icon: MapPin, name: "Nationwide Project Support", desc: "Our Nairobi-based team designs solutions around the realities of your site and control room, wherever you are in Kenya." },
   { icon: Wrench, name: "Long-Term Care", desc: "We keep cameras, recording, alerts and analysis working together after handover." },
 ];
 
@@ -27,7 +27,7 @@ const faqs = [
   { q: "What happens during a power cut?", a: "We offer backup power and solar options so your system keeps recording through outages. We can recommend the right backup during the site survey." },
   { q: "Does this replace normal recording?", a: "No. Your DVR or NVR can continue recording while the intelligence layer processes feeds for analytics, dashboard status and alerts." },
   { q: "Is a subscription compulsory?", a: "No. There are zero mandatory subscriptions. The system can provide continuous footage analysis and daily email reports without a compulsory recurring fee." },
-  { q: "Which areas do you cover?", a: "Nairobi and its surroundings. We can travel further afield for larger projects — just contact us with your location." },
+  { q: "Which areas do you cover?", a: "We are based in Nairobi and serve clients across Kenya. Contact us with your location and project requirements." },
   { q: "Do you offer maintenance?", a: "Yes. We offer one-off service visits and monthly or quarterly care plans that include health checks, cleaning, firmware updates and priority response." },
 ];
 
@@ -48,7 +48,7 @@ const About = () => {
               Smart Vision. <span className="text-primary">Total Security.</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Cognitive Camera Vision is a Nairobi-based surveillance technology company. We add an intelligence layer that helps cameras see, understand and identify which feed needs attention now.
+              Cognitive Camera Vision is a Nairobi-based surveillance technology company serving clients across Kenya. We add an intelligence layer that helps cameras see, understand and identify which feed needs attention now.
             </p>
           </div>
         </div>

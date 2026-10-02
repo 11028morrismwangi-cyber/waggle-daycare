@@ -45,7 +45,7 @@ const Gallery = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight mb-4">
               Cognitive Camera Vision <span className="text-primary">in Action</span>
             </h1>
-            <p className="text-lg text-muted-foreground">A look at the installations and systems we deliver every day across Nairobi.</p>
+            <p className="text-lg text-muted-foreground">A look at the installations and systems we deliver across Kenya.</p>
           </div>
         </div>
       </section>

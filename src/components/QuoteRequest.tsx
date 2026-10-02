@@ -110,7 +110,7 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
                   </div>
                   <div className="space-y-2">
                     <Label>Location *</Label>
-                    <Input placeholder="e.g. Westlands, Nairobi" {...register("location")} />
+                    <Input placeholder="Town or county" {...register("location")} />
                     {errors.location && <p className="text-sm text-destructive">{errors.location.message}</p>}
                   </div>
                 </div>
