@@ -17,7 +17,7 @@ const includedServices = [
 const systems = [
   {
     name: "Home System", popular: false, features: [
-      "4–8 camera NVR setup", "1–3 months of footage retention",
+      "4–8 camera NVR setup", "Storage sized around your retention needs",
       "Mobile app for the whole family", "Motion alert notifications",
     ],
   },

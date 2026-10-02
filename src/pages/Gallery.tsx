@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
 import { Camera } from "lucide-react";
 import cctvImg from "@/assets/cctv-install.jpg";
 import surveillanceImg from "@/assets/surveillance.jpg";
@@ -54,10 +55,10 @@ const Gallery = () => {
           {/* Filters */}
           <div className="flex flex-wrap justify-center gap-2 mb-10">
             {categories.map((cat) => (
-              <button key={cat} onClick={() => setActive(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-medium ${active === cat ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>
+              <Button key={cat} onClick={() => setActive(cat)}
+                variant={active === cat ? "default" : "secondary"} size="sm" className="rounded-full">
                 {cat}
-              </button>
+              </Button>
             ))}
           </div>
 
@@ -65,15 +66,15 @@ const Gallery = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             <>
               {filtered.map((photo, i) => (
-                <div key={`${photo.caption}-${i}`}
-                  className="group relative aspect-square rounded-2xl overflow-hidden bg-muted cursor-pointer">
-                  <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/50 flex items-end">
-                    <p className="text-primary-foreground text-sm font-medium p-4 translate-y-full group-hover:translate-y-0">
+                <figure key={`${photo.caption}-${i}`}
+                  className="relative aspect-square rounded-lg overflow-hidden bg-muted">
+                  <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover" />
+                  <figcaption className="absolute inset-x-0 bottom-0 bg-foreground/70">
+                    <p className="text-primary-foreground text-sm font-medium p-4">
                       {photo.caption}
                     </p>
-                  </div>
-                </div>
+                  </figcaption>
+                </figure>
               ))}
             </>
           </div>

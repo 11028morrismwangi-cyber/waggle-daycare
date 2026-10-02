@@ -34,7 +34,7 @@ const BookingConfirmed = () => {
               {state?.name
                 ? `Thanks ${state.name}, we'll reach out within 24 hours with your quotation.`
                 : "We'll reach out within 24 hours with your quotation."}{" "}
-              A free site survey will be scheduled at your convenience.
+              A site assessment can be scheduled at your convenience.
             </p>
           </div>
 

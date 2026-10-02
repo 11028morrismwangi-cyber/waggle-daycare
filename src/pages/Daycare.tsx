@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { Video, ShieldCheck, Eye, HardDrive, Smartphone, Cable, CheckCircle2, Home, Building2, Store, Warehouse } from "lucide-react";
 
 const includedServices = [
-  { icon: Home, title: "Free Site Survey", desc: "On-site assessment and camera placement plan" },
+  { icon: Home, title: "Site Assessment", desc: "On-site review and camera placement plan" },
   { icon: Video, title: "HD & 4K Cameras", desc: "Indoor, outdoor, dome and bullet options" },
   { icon: Eye, title: "Night Vision", desc: "Clear recording even in complete darkness" },
   { icon: HardDrive, title: "NVR & Storage", desc: "Secure local recording with months of footage retained" },
@@ -26,7 +26,7 @@ const requirements = [
   "Indoor dome cameras for offices, shops and living areas",
   "Outdoor bullet cameras for walls, gates and compounds",
   "PTZ and panoramic cameras for wide-angle coverage",
-  "NVR systems with 1–3 months of footage retention",
+  "NVR systems sized around your required footage-retention period",
   "Solar and backup power options for uninterrupted recording",
   "Internet and remote access configuration included",
 ];
