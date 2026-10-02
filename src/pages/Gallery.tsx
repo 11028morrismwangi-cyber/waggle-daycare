@@ -3,22 +3,27 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Camera } from "lucide-react";
+import cctvImg from "@/assets/cctv-install.jpg";
+import surveillanceImg from "@/assets/surveillance.jpg";
+import alarmImg from "@/assets/alarm-intercom.jpg";
+import maintenanceImg from "@/assets/maintenance.jpg";
+import heroImg from "@/assets/hero-cctv.jpg";
 
-const categories = ["All", "Daycare Play", "Boarding", "Grooming", "Outdoor"];
+const categories = ["All", "Installations", "Cameras", "Control Rooms"];
 
 const photos = [
-  { src: "/placeholder.svg", caption: "Best friends at morning play", category: "Daycare Play" },
-  { src: "/placeholder.svg", caption: "Cozy in the VIP suite", category: "Boarding" },
-  { src: "/placeholder.svg", caption: "Fresh cut and feeling fancy", category: "Grooming" },
-  { src: "/placeholder.svg", caption: "Splashing in the pool", category: "Outdoor" },
-  { src: "/placeholder.svg", caption: "Tug-of-war champions", category: "Daycare Play" },
-  { src: "/placeholder.svg", caption: "Bedtime snuggles", category: "Boarding" },
-  { src: "/placeholder.svg", caption: "Spa day bliss", category: "Grooming" },
-  { src: "/placeholder.svg", caption: "Trail hike adventures", category: "Outdoor" },
-  { src: "/placeholder.svg", caption: "Puppy socialization group", category: "Daycare Play" },
-  { src: "/placeholder.svg", caption: "Deluxe suite relaxation", category: "Boarding" },
-  { src: "/placeholder.svg", caption: "Before and after glow-up", category: "Grooming" },
-  { src: "/placeholder.svg", caption: "Fetch in the yard", category: "Outdoor" },
+  { src: cctvImg, caption: "Dome camera installation", category: "Installations" },
+  { src: surveillanceImg, caption: "Central monitoring room", category: "Control Rooms" },
+  { src: alarmImg, caption: "Video intercom & alarm keypad", category: "Cameras" },
+  { src: heroImg, caption: "Outdoor bullet camera at dusk", category: "Cameras" },
+  { src: maintenanceImg, caption: "Routine maintenance visit", category: "Installations" },
+  { src: surveillanceImg, caption: "Multi-camera NVR wall", category: "Control Rooms" },
+  { src: cctvImg, caption: "Office ceiling coverage", category: "Installations" },
+  { src: heroImg, caption: "Perimeter surveillance", category: "Cameras" },
+  { src: alarmImg, caption: "Smart entry systems", category: "Cameras" },
+  { src: surveillanceImg, caption: "Live feed monitoring", category: "Control Rooms" },
+  { src: cctvImg, caption: "Retail shop coverage", category: "Installations" },
+  { src: maintenanceImg, caption: "Annual system service", category: "Installations" },
 ];
 
 const Gallery = () => {
@@ -38,9 +43,9 @@ const Gallery = () => {
               <Camera className="inline w-4 h-4 mr-1 -mt-0.5" /> Gallery
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight mb-4">
-              Pet Daycare in <span className="text-primary">Action</span>
+              Cognitive Camera Vision <span className="text-primary">in Action</span>
             </h1>
-            <p className="text-lg text-muted-foreground">A peek at the fun happening every day at Pet Daycare.</p>
+            <p className="text-lg text-muted-foreground">A look at the installations and systems we deliver every day across Nairobi.</p>
           </motion.div>
         </div>
       </section>
