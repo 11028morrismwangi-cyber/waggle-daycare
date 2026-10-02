@@ -153,7 +153,7 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
 
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <CalendarDays className="w-4 h-4 text-primary" />
-                  Free site survey included within Nairobi.
+                  We will review your site and existing CCTV infrastructure before finalising the solution.
                 </div>
 
                 <Button type="submit" variant="brand" size="lg" className="w-full" disabled={isSubmitting}>

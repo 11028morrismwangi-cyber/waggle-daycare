@@ -9,14 +9,14 @@ const plans = [
   { name: "One-Off Service Visit", duration: "Per visit", features: ["Full system health check", "Camera cleaning & lens check", "Cable & connector testing"] },
   { name: "Monthly Care Plan", duration: "Billed monthly", features: ["Scheduled check-ups", "Priority response", "Firmware & security updates", "Small adjustments included"] },
   { name: "Quarterly Plan", duration: "Every 3 months", features: ["Routine inspections", "Storage & backup verification", "Camera angle adjustments"] },
-  { name: "System Upgrade Consultation", duration: "Free", features: ["Camera & storage capacity review", "Upgrade path recommendation", "Network coverage check"] },
-  { name: "Emergency Call-Out", duration: "Same-day", features: ["Fast diagnosis & repair", "Replacement of faulty parts", "System back online fast"] },
+  { name: "System Upgrade Consultation", duration: "Tailored review", features: ["Camera & storage capacity review", "Upgrade path recommendation", "Network coverage check"] },
+  { name: "Priority Call-Out", duration: "Scheduled response", features: ["Fast diagnosis & repair", "Replacement of faulty parts", "System restoration support"] },
 ];
 
 const reasons = [
-  { name: "Rapid Response", title: "Same-day support", detail: "When a camera goes down, we respond the same day." },
-  { name: "Certified Technicians", title: "Trained & vetted", detail: "Uniformed technicians who know your system by name." },
-  { name: "Genuine Parts", title: "Manufacturer backed", detail: "Only genuine equipment — with full warranty coverage." },
+  { name: "System Awareness", title: "Know what is offline", detail: "Connection status helps your team spot cameras that need technical attention." },
+  { name: "Integrated Care", title: "One complete system", detail: "Cameras, recording, alerts and analysis are checked as one connected solution." },
+  { name: "Practical Upgrades", title: "Retain what works", detail: "Compatible infrastructure is kept while weak points are improved." },
 ];
 
 const Training = () => {

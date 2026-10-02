@@ -1,12 +1,12 @@
-import { Shield, Video, Smartphone, Eye, Moon, Users } from "lucide-react";
+import { Camera, ChartNoAxesCombined, BellRing, LayoutDashboard, RefreshCw, BadgeDollarSign } from "lucide-react";
 
 const badges = [
-  { icon: Shield, label: "Licensed & Insured" },
-  { icon: Video, label: "4K Camera Systems" },
-  { icon: Smartphone, label: "Remote Mobile Access" },
-  { icon: Eye, label: "24/7 Monitoring Support" },
-  { icon: Moon, label: "Night Vision Ready" },
-  { icon: Users, label: "Trained Technicians" },
+  { icon: Camera, label: "Works With Existing Cameras" },
+  { icon: ChartNoAxesCombined, label: "24/7 Footage Analysis" },
+  { icon: BellRing, label: "SMS & Email Alerts" },
+  { icon: LayoutDashboard, label: "Priority Dashboard" },
+  { icon: RefreshCw, label: "Up to 96% Retained" },
+  { icon: BadgeDollarSign, label: "No Mandatory Subscription" },
 ];
 
 const TrustBadges = () => {

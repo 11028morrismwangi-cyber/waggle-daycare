@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Video, MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter } from "lucide-react";
+import { Video, MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -15,15 +15,8 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-sm leading-relaxed mb-6 text-primary-foreground/60">
-              Smart vision. Total security. Professional CCTV installation and surveillance systems across Nairobi.
+              CCTV plus an intelligence layer that helps you know which camera needs your attention now.
             </p>
-            <div className="flex gap-3">
-              {[Facebook, Instagram, Twitter].map((Icon, i) => (
-                <a key={i} href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Icon className="w-4 h-4 text-primary-foreground/70" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Contact */}
@@ -36,11 +29,14 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 shrink-0 text-primary" />
-                <a href="tel:254796497698" className="hover:text-primary transition-colors">+254 796 497 698</a>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:254796497698" className="hover:text-primary">+254 796 497 698</a>
+                  <a href="tel:254737552281" className="hover:text-primary">+254 737 552 281</a>
+                </div>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 shrink-0 text-primary" />
-                <a href="mailto:info@cognitivevision.co.ke" className="hover:text-primary transition-colors">info@cognitivevision.co.ke</a>
+                <a href="mailto:info@cognitivevision.co.ke" className="hover:text-primary">info@cognitivevision.co.ke</a>
               </div>
             </div>
           </div>
@@ -57,7 +53,7 @@ const Footer = () => {
                 { label: "Gallery", path: "/gallery" },
                 { label: "About", path: "/about" },
               ].map((link) => (
-                <Link key={link.path} to={link.path} className="block hover:text-primary transition-colors">
+                <Link key={link.path} to={link.path} className="block hover:text-primary">
                   {link.label}
                 </Link>
               ))}
