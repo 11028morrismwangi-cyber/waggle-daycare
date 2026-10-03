@@ -41,7 +41,7 @@ const IntelligenceDifference = () => (
           <ul className="space-y-4">
             {conventional.map((item) => (
               <li key={item} className="flex gap-3 text-muted-foreground">
-                <X className="w-5 h-5 text-destructive shrink-0 mt-0.5" />
+                <span className="w-5 h-5 shrink-0 mt-0.5 inline-block rounded-full bg-muted-foreground/30" />
                 <span>{item}</span>
               </li>
             ))}
@@ -61,7 +61,7 @@ const IntelligenceDifference = () => (
           <ul className="space-y-4">
             {cognitive.map((item) => (
               <li key={item} className="flex gap-3 text-foreground">
-                <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <span className="w-5 h-5 shrink-0 mt-0.5 inline-block rounded-full bg-primary/70" />
                 <span>{item}</span>
               </li>
             ))}
