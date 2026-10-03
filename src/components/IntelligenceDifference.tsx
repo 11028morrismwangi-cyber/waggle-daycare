@@ -1,4 +1,4 @@
-import { Camera, BrainCircuit, Check, X } from "lucide-react";
+import placeholderIcon from "@/assets/placeholder-icon.jpg";
 
 const conventional = [
   "Records footage for later review",
@@ -30,8 +30,8 @@ const IntelligenceDifference = () => (
       <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
         <article className="border border-border bg-card p-6 md:p-8 rounded-lg">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-11 h-11 rounded-lg bg-muted flex items-center justify-center">
-              <Camera className="w-6 h-6 text-muted-foreground" />
+            <div className="w-11 h-11 rounded-lg overflow-hidden bg-muted">
+              <img src={placeholderIcon} alt="" className="w-full h-full object-cover" />
             </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Conventional CCTV</p>
@@ -50,8 +50,8 @@ const IntelligenceDifference = () => (
 
         <article className="border-2 border-primary bg-card p-6 md:p-8 rounded-lg">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center">
-              <BrainCircuit className="w-6 h-6 text-primary" />
+            <div className="w-11 h-11 rounded-lg overflow-hidden bg-primary/10">
+              <img src={placeholderIcon} alt="" className="w-full h-full object-cover" />
             </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-primary">Cognitive Vision</p>
