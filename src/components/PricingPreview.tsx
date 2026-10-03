@@ -1,27 +1,29 @@
 import { Link } from "react-router-dom";
-import { Camera, FileText, ScanSearch } from "lucide-react";
+import placeholderIcon from "@/assets/placeholder-icon.jpg";
 import { Button } from "@/components/ui/button";
+
 
 const values = [
   {
     name: "Keep What Already Works",
-    icon: Camera,
+    icon: placeholderIcon,
     metric: "Up to 96%",
     description: "of a compatible existing CCTV system can be retained while intelligence is added on top.",
   },
   {
     name: "Reports Without Extra Cost",
-    icon: FileText,
+    icon: placeholderIcon,
     metric: "KES 0",
     description: "for daily email reports and continuous footage analysis as configured in the solution.",
   },
   {
     name: "No Compulsory Renewal",
-    icon: ScanSearch,
+    icon: placeholderIcon,
     metric: "Zero",
     description: "mandatory subscriptions. One investment unlocks more capability from your cameras.",
   },
 ];
+
 
 const PricingPreview = () => {
   return (
@@ -45,9 +47,10 @@ const PricingPreview = () => {
               key={value.name}
               className="relative bg-card rounded-lg p-8 shadow-card border border-border"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <value.icon className="w-6 h-6 text-primary" />
+              <div className="w-12 h-12 rounded-xl overflow-hidden bg-primary/10 mb-4">
+                <img src={value.icon} alt="" className="w-full h-full object-cover" />
               </div>
+
               <h3 className="text-lg font-semibold text-foreground">{value.name}</h3>
               <div className="mt-4 mb-6">
                 <span className="text-3xl font-bold text-primary">{value.metric}</span>
