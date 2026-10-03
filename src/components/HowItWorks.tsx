@@ -1,20 +1,20 @@
-import { Eye, BellRing, LayoutDashboard } from "lucide-react";
+import placeholderIcon from "@/assets/placeholder-icon.jpg";
 
 const steps = [
   {
-    icon: Eye,
+    image: placeholderIcon,
     step: "01",
     title: "Cameras That See",
     description: "Our intelligence layer watches every feed in real time and understands what is happening — not just recording it for later.",
   },
   {
-    icon: LayoutDashboard,
+    image: placeholderIcon,
     step: "02",
     title: "Every Feed, Categorized",
     description: "Even across 100+ cameras, each feed is sorted on one dashboard: Emergency, Risk, Observe or Normal.",
   },
   {
-    icon: BellRing,
+    image: placeholderIcon,
     step: "03",
     title: "Attention Where It Matters",
     description: "Your control room focuses on Emergencies and Risks only — with instant notifications the moment something happens.",
@@ -39,8 +39,8 @@ const HowItWorks = () => {
           {steps.map((step, i) => (
             <div key={step.step} className="text-center relative">
               <div className="relative inline-flex items-center justify-center mb-6">
-                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
-                  <step.icon className="w-9 h-9 text-primary" />
+                <div className="w-20 h-20 rounded-full overflow-hidden bg-primary/10">
+                  <img src={step.image} alt="" className="w-full h-full object-cover" />
                 </div>
                 <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-primary-foreground text-sm font-bold flex items-center justify-center">
                   {step.step}

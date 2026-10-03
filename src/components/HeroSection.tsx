@@ -1,16 +1,21 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ShieldCheck } from "lucide-react";
-import heroImage from "@/assets/hero-cctv.jpg";
+import heroVideoAsset from "@/assets/hero-cctv.mp4.asset.json";
+
+const heroVideo = heroVideoAsset.url;
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-[700px] md:min-h-[850px] flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="CCTV security camera installed on a modern building"
+        <video
+          src={heroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-full object-cover" />
 
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/50 to-transparent" />
