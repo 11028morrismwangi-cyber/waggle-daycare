@@ -3,11 +3,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Camera } from "lucide-react";
-import cctvImg from "@/assets/cctv-install.jpg";
-import surveillanceImg from "@/assets/surveillance.jpg";
-import alarmImg from "@/assets/alarm-intercom.jpg";
-import maintenanceImg from "@/assets/maintenance.jpg";
-import heroImg from "@/assets/hero-cctv.jpg";
+// RE-ASSIGNED ORIGINAL UNIQUE CORE ASSETS
+import cctvImg from "@/assets/cctv-install.jpg"; // Dome camera installation
+import surveillanceImg from "@/assets/surveillance.jpg"; // Central monitoring room
+import alarmImg from "@/assets/alarm-intercom.jpg"; // Video intercom & alarm keypad
+import maintenanceImg from "@/assets/maintenance.jpg"; // Routine maintenance visit
+import heroImg from "@/assets/hero-cctv.jpg"; // Perimeter surveillance
+// BRAND NEW INDEPENDENT ASSET INPUTS
+import duskBulletImg from "@/assets/dusk-bullet.jpg";
+import nvrWallImg from "@/assets/nvr-wall.jpg";
+import ceilingCamImg from "@/assets/ceiling-cam.jpg";
+import smartEntryImg from "@/assets/smart-entry.jpg";
+import liveFeedImg from "@/assets/live-feed.jpg";
 
 const categories = ["All", "Installations", "Cameras", "Control Rooms"];
 
@@ -15,13 +22,13 @@ const photos = [
   { src: cctvImg, caption: "Dome camera installation", category: "Installations" },
   { src: surveillanceImg, caption: "Central monitoring room", category: "Control Rooms" },
   { src: alarmImg, caption: "Video intercom & alarm keypad", category: "Cameras" },
-  { src: heroImg, caption: "Outdoor bullet camera at dusk", category: "Cameras" },
+  { src: duskBulletImg, caption: "Outdoor bullet camera at dusk", category: "Cameras" },
   { src: maintenanceImg, caption: "Routine maintenance visit", category: "Installations" },
-  { src: surveillanceImg, caption: "Multi-camera NVR wall", category: "Control Rooms" },
-  { src: cctvImg, caption: "Office ceiling coverage", category: "Installations" },
+  { src: nvrWallImg, caption: "Multi-camera NVR wall", category: "Control Rooms" },
+  { src: ceilingCamImg, caption: "Office ceiling coverage", category: "Installations" },
   { src: heroImg, caption: "Perimeter surveillance", category: "Cameras" },
-  { src: alarmImg, caption: "Smart entry systems", category: "Cameras" },
-  { src: surveillanceImg, caption: "Live feed monitoring", category: "Control Rooms" },
+  { src: smartEntryImg, caption: "Smart entry systems", category: "Cameras" },
+  { src: liveFeedImg, caption: "Live feed monitoring", category: "Control Rooms" },
   { src: cctvImg, caption: "Retail shop coverage", category: "Installations" },
   { src: maintenanceImg, caption: "Annual system service", category: "Installations" },
 ];
