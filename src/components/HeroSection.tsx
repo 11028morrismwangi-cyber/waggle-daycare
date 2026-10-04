@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroVideoAsset from "@/assets/hero-cctv.mp4.asset.json";
+import heroPoster from "@/assets/hero-cctv.jpg";
 
 const heroVideo = heroVideoAsset.url;
 
@@ -11,6 +12,7 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <video
           src={heroVideo}
+          poster={heroPoster}
           autoPlay
           loop
           muted
