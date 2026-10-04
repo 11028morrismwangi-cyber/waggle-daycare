@@ -30,9 +30,7 @@ const PricingPreview = () => {
   return (
     <section className="py-20 md:py-28 bg-warm-section">
       <div className="container mx-auto px-4 md:px-8">
-        <div
-          className="text-center mb-14"
-        >
+        <div className="text-center mb-14">
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">More Value From CCTV</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2">
             Keep the Cameras. Add the Intelligence.
@@ -48,8 +46,9 @@ const PricingPreview = () => {
               key={value.name}
               className="relative bg-card rounded-lg p-8 shadow-card border border-border"
             >
+              {/* FIXED VALUE.IMAGE PATHWAY HERE */}
               <div className="w-12 h-12 rounded-xl overflow-hidden bg-primary/10 mb-4">
-                <img src={value.icon} alt="" className="w-full h-full object-cover" />
+                <img src={value.image} alt="" className="w-full h-full object-cover" />
               </div>
 
               <h3 className="text-lg font-semibold text-foreground">{value.name}</h3>
