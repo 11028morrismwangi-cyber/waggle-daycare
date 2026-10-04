@@ -1,23 +1,25 @@
-import placeholderIcon from "@/assets/placeholder-icon.jpg";
+import stepOneIcon from "@/assets/step1.png";
+import stepTwoIcon from "@/assets/step2.png";
+import stepThreeIcon from "@/assets/step3.png";
 
 const steps = [
   {
-    image: placeholderIcon,
+    image: stepOneIcon,
     step: "01",
     title: "Cameras That See",
-    description: "Our intelligence layer watches every feed in real time and understands what is happening — not just recording it for later.",
+    description: "Our intelligence layer watches every feed in real time and understands what is happening – not just recording.",
   },
   {
-    image: placeholderIcon,
+    image: stepTwoIcon,
     step: "02",
     title: "Every Feed, Categorized",
     description: "Even across 100+ cameras, each feed is sorted on one dashboard: Emergency, Risk, Observe or Normal.",
   },
   {
-    image: placeholderIcon,
+    image: stepThreeIcon,
     step: "03",
     title: "Attention Where It Matters",
-    description: "Your control room focuses on Emergencies and Risks only — with instant notifications the moment something happens.",
+    description: "Your control room focuses on Emergencies and Risks only – with instant notifications the moment something happens.",
   },
 ];
 
