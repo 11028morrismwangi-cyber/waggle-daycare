@@ -1,12 +1,17 @@
-import placeholderIcon from "@/assets/placeholder-icon.jpg";
+import cameraIcon from "@/assets/existing-cameras.jpg.png";
+import analysisIcon from "@/assets/footage-analysis.jpg.png";
+import alertIcon from "@/assets/alerts.jpg.png";
+import dashboardIcon from "@/assets/dashboard.jpg.png";
+import dataIcon from "@/assets/retained.jpg.png";
+import subIcon from "@/assets/no-subscription.jpg.png";
 
 const badges = [
-  { image: placeholderIcon, label: "Works With Existing Cameras" },
-  { image: placeholderIcon, label: "24/7 Footage Analysis" },
-  { image: placeholderIcon, label: "SMS & Email Alerts" },
-  { image: placeholderIcon, label: "Priority Dashboard" },
-  { image: placeholderIcon, label: "Up to 96% Retained" },
-  { image: placeholderIcon, label: "No Mandatory Subscription" },
+  { image: cameraIcon, label: "Works With Existing Cameras" },
+  { image: analysisIcon, label: "24/7 Footage Analysis" },
+  { image: alertIcon, label: "SMS & Email Alerts" },
+  { image: dashboardIcon, label: "Priority Dashboard" },
+  { image: dataIcon, label: "Up to 96% Retained" },
+  { image: subIcon, label: "No Mandatory Subscription" },
 ];
 
 const TrustBadges = () => {
