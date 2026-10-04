@@ -1,29 +1,27 @@
 import { Link } from "react-router-dom";
-import placeholderIcon from "@/assets/placeholder-icon.jpg";
 import { Button } from "@/components/ui/button";
-
+import { ShieldCheck, Receipt, RotateCcw } from "lucide-react";
 
 const values = [
   {
     name: "Keep What Already Works",
-    icon: placeholderIcon,
+    icon: ShieldCheck,
     metric: "Up to 96%",
     description: "of a compatible existing CCTV system can be retained while intelligence is added on top.",
   },
   {
     name: "Reports Without Extra Cost",
-    icon: placeholderIcon,
+    icon: Receipt,
     metric: "KES 0",
     description: "for daily email reports and continuous footage analysis as configured in the solution.",
   },
   {
     name: "No Compulsory Renewal",
-    icon: placeholderIcon,
+    icon: RotateCcw,
     metric: "Zero",
     description: "mandatory subscriptions. One investment unlocks more capability from your cameras.",
   },
 ];
-
 
 const PricingPreview = () => {
   return (
