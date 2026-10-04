@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import heroVideoAsset from "@/assets/hero-cctv.mp4.asset.json";
 import heroPoster from "@/assets/hero-cctv.jpg";
 
-const heroVideo = new URL(
-  heroVideoAsset.url,
-  "https://id-preview--7decc45a-767b-482b-95f6-6b8cb91af2ab.lovable.app",
-).href;
+const heroVideo =
+  window.location.hostname === "localhost" || window.location.hostname.endsWith("lovable.app")
+    ? heroVideoAsset.url
+    : "/hero-cctv.mp4";
 
 const HeroSection = () => {
   return (
