@@ -19,7 +19,7 @@ import liveFeedImg from "@/assets/live-feed.jpg";
 const categories = ["All", "Installations", "Cameras", "Control Rooms"];
 
 const photos = [
-  { src: cctvImg, caption: "Dome camera installation", category: "Installations" },
+  { src: cctvImg, caption: "Bullet camera installation", category: "Installations" },
   { src: surveillanceImg, caption: "Central monitoring room", category: "Control Rooms" },
   { src: alarmImg, caption: "Video intercom & alarm keypad", category: "Cameras" },
   { src: duskBulletImg, caption: "Outdoor bullet camera at dusk", category: "Cameras" },
