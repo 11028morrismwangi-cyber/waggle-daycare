@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ShieldCheck } from "lucide-react";
 import heroVideoAsset from "@/assets/hero-cctv.mp4.asset.json";
+import heroPoster from "@/assets/hero-cctv.jpg";
 
 const heroVideo = heroVideoAsset.url;
 
@@ -12,6 +12,7 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <video
           src={heroVideo}
+          poster={heroPoster}
           autoPlay
           loop
           muted
@@ -25,7 +26,7 @@ const HeroSection = () => {
       <div className="relative container mx-auto px-4 md:px-8 pt-20">
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/20 border border-primary/40 text-primary-foreground text-sm font-semibold mb-6">
-            <ShieldCheck className="w-4 h-4" /> Intelligent Surveillance — Across Kenya
+            Intelligent Surveillance — Across Kenya
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
             Cameras that only record{" "}
