@@ -40,7 +40,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <Video className="w-8 h-8 text-primary" />
-            <span className="text-base md:text-lg font-bold tracking-tight text-foreground uppercase">
+            <span className="text-lg md:text-xl font-bold tracking-normal text-foreground uppercase">
               Cognitive <span className="text-primary">Camera Vision</span>
             </span>
           </Link>

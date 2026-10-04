@@ -3,7 +3,10 @@ import { Button } from "@/components/ui/button";
 import heroVideoAsset from "@/assets/hero-cctv.mp4.asset.json";
 import heroPoster from "@/assets/hero-cctv.jpg";
 
-const heroVideo = heroVideoAsset.url;
+const heroVideo = new URL(
+  heroVideoAsset.url,
+  "https://id-preview--7decc45a-767b-482b-95f6-6b8cb91af2ab.lovable.app",
+).href;
 
 const HeroSection = () => {
   return (
@@ -17,6 +20,7 @@ const HeroSection = () => {
           loop
           muted
           playsInline
+          preload="auto"
           className="w-full h-full object-cover" />
 
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/50 to-transparent" />
