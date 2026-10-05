@@ -47,25 +47,34 @@ const Cctv = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero */}
-      <section 
-  className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-cover bg-center text-white"
-  style={{ backgroundImage: `linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), url(${cctvHero})` }}
->
+                {/* Split Hero Layout Grid */}
+      <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5 overflow-hidden">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-3xl">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
-              <Video className="inline w-4 h-4 mr-1 -mt-0.5" /> Installation Services
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-4">
-              Complete <span className="text-primary">CCTV Installation</span> for Your Property
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
-              Professional placement of high-definition cameras with night vision, secure recording and remote mobile access — installed cleanly and backed by support.
-            </p>
-            <Button variant="brand" size="lg" asChild>
-              <Link to="/book-survey">Get a Quote</Link>
-            </Button>
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            {/* Left Side: Content Text */}
+            <div className="text-left order-2 lg:order-1">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
+                <Video className="inline w-4 h-4 mr-1 -mt-0.5" /> Installation Services
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-4 tracking-tight">
+                Complete <span className="text-primary">CCTV Installation</span> for Your Property
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
+                Professional placement of high-definition cameras with night vision, secure recording and remote mobile access — installed cleanly and backed by support.
+              </p>
+              <Button variant="brand" size="lg" asChild>
+                <Link to="/book-survey">Get a Quote</Link>
+              </Button>
+            </div>
+
+            {/* Right Side: Branded Image Slot */}
+            <div className="relative order-1 lg:order-2 rounded-2xl overflow-hidden shadow-card border border-border bg-card">
+              <img 
+                src={cctvHero} 
+                alt="Intelligent CCTV Camera Infrastructure" 
+                className="w-full h-[300px] md:h-[450px] object-cover object-center"
+              />
+            </div>
           </div>
         </div>
       </section>
