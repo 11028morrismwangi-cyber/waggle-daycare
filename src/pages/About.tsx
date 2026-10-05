@@ -139,7 +139,7 @@ const About = () => {
           <div className="text-center mt-10">
             <p className="text-muted-foreground mb-4">Still have questions?</p>
             <Button variant="brand" size="lg" asChild>
-              <Link to="/contact">Contact Us</Link>
+              <Link to="/Contact">Contact Us</Link>
             </Button>
           </div>
         </div>
