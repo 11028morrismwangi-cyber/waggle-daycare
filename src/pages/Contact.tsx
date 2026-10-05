@@ -160,7 +160,12 @@ const Contact = () => {
             <div className="lg:col-span-3">
               <div className="bg-card rounded-2xl shadow-card p-8">
                 <h3 className="text-xl font-semibold text-foreground mb-6">Send Us a Message</h3>
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            {/* INVISIBLE SPAM BOT TRAP ELEMENT BLOCK */}
+                  <div className="hidden" aria-hidden="true">
+                    <input type="text" tabIndex={-1} autoComplete="off" placeholder="Leave empty" {...register("tracking_pot" as any)} />
+                  </div>
+
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name *</Label>
