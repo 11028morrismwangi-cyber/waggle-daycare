@@ -10,28 +10,28 @@ const services = [
     description: "Live analysis that helps existing or new cameras identify events and prioritize attention.",
     price: "Built around your site",
     image: cctvImg,
-    link: "/daycare",
+    link: "/Cctv",
   },
   {
     title: "CCTV Systems",
     description: "Purpose-designed camera, recording and remote-viewing systems for each property.",
     price: "New or existing systems",
     image: surveillanceImg,
-    link: "/boarding",
+    link: "/Surveillance",
   },
   {
     title: "Alarm & Intercom",
     description: "Motion sensors, video doorbells and intercoms with instant smartphone alerts.",
     price: "Integrated protection",
     image: alarmImg,
-    link: "/grooming",
+    link: "/Alarms",
   },
   {
     title: "Maintenance",
     description: "Scheduled health checks, camera cleaning, cable testing and firmware updates.",
     price: "Reliable long-term care",
     image: maintenanceImg,
-    link: "/training",
+    link: "/Maintenance",
   },
 ];
 
@@ -39,9 +39,7 @@ const ServicesSection = () => {
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-8">
-        <div
-          className="text-center mb-14"
-        >
+        <div className="text-center mb-14">
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Services</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2">
             More Than Cameras on a Wall
@@ -53,9 +51,7 @@ const ServicesSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, i) => (
-            <div
-              key={service.title}
-            >
+            <div key={service.title}>
               <Link
                 to={service.link}
                 className="group block bg-card rounded-lg shadow-card overflow-hidden hover:shadow-card-hover"
@@ -72,7 +68,6 @@ const ServicesSection = () => {
                   <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{service.description}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-primary font-semibold text-sm">{service.price}</span>
-
                   </div>
                 </div>
               </Link>
