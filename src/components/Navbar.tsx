@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { label: "CCTV", path: "/daycare" },
-  { label: "Surveillance", path: "/boarding" },
-  { label: "Alarms", path: "/grooming" },
-  { label: "Maintenance", path: "/training" },
+  { label: "CCTV", path: "/cctv" },
+  { label: "Surveillance", path: "/surveillance" },
+  { label: "Alarms", path: "/alarms" },
+  { label: "Maintenance", path: "/maintenance" },
   { label: "Gallery", path: "/gallery" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
