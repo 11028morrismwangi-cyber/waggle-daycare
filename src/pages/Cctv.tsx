@@ -181,4 +181,4 @@ const Daycare = () => {
   );
 };
 
-export default Daycare;
+export default Cctv;
