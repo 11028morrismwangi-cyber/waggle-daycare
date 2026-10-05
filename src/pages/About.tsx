@@ -40,31 +40,25 @@ const About = () => {
       <Navbar />
 
             {/* Split Hero Layout Grid */}
-      <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5 overflow-hidden">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            {/* Left Side: Content Text */}
-            <div className="text-left order-2 lg:order-1">
-              <span className="text-sm font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1.5 rounded-full">
-                Our Identity
-              </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4 tracking-tight">
-                About Cognitive Camera Vision
-              </h1>
-              <p className="text-lg text-muted-foreground mt-4 leading-relaxed max-w-xl">
-                We engineer intelligent surveillance infrastructures across Kenya, transforming standard video data feeds into proactive business logic layers.
-              </p>
-            </div>
-
-            {/* Right Side: Branded Image Slot */}
-            <div className="relative order-1 lg:order-2 rounded-2xl overflow-hidden shadow-card border border-border bg-card">
-              <img 
-                src={aboutHero} 
-                alt="About Cognitive Camera Vision Operations" 
-                className="w-full h-[300px] md:h-[450px] object-cover object-center"
-              />
-            </div>
+            {/* Absolute Full Bleed Hero Layout */}
+      <section className="relative overflow-hidden pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/10 via-background to-primary/5">
+        <div className="absolute inset-y-0 right-0 hidden lg:block w-[46%]">
+          <img src={aboutHero} alt="About Cognitive Camera Vision Operations" className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-transparent" />
+        </div>
+        <div className="container relative mx-auto px-4 md:px-8">
+          <div className="max-w-3xl lg:max-w-[52%]">
+            <span className="text-sm font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1.5 rounded-full">
+              Our Identity
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-4 mt-4">
+              About <span className="text-primary">Cognitive Camera Vision</span>
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
+              We engineer intelligent surveillance infrastructures across Kenya, transforming standard video data feeds into proactive business logic layers.
+            </p>
           </div>
+          <img src={aboutHero} alt="About Cognitive Camera Vision Operations" className="mt-10 h-64 w-full rounded-lg object-cover shadow-hero lg:hidden" />
         </div>
       </section>
 
