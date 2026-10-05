@@ -77,7 +77,7 @@ const Surveillance = () => {
               Full surveillance systems with NVR recording, remote playback and mobile access — review any moment, from anywhere, at any time.
             </p>
             <Button variant="brand-secondary" size="lg" asChild>
-              <Link to="/book-boarding">Request a Quote</Link>
+              <Link to="/BookSurvey">Request a Quote</Link>
             </Button>
           </div>
           <img src={surveillanceImg} alt="Security control room displaying multiple live camera feeds" className="mt-10 h-64 w-full rounded-lg object-cover shadow-hero lg:hidden" />
@@ -132,7 +132,7 @@ const Surveillance = () => {
                   ))}
                 </ul>
                 <Button variant={system.popular ? "brand-secondary" : "brand"} className="w-full" asChild>
-                  <Link to="/book-boarding">Request a Quote</Link>
+                  <Link to="/BookSurvey">Request a Quote</Link>
                 </Button>
               </div>
             ))}
