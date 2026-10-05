@@ -37,7 +37,7 @@ const systemTypes = [
   { label: "Integration", range: "Works with your CCTV" },
 ];
 
-const Grooming = () => {
+const Alarms = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
