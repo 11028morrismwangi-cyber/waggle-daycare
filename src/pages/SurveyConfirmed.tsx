@@ -29,7 +29,7 @@ const SurveyConfirmed = () => {
           </div>
 
           <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Request Received! 🎉</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Request Received!</h1>
             <p className="text-muted-foreground text-lg mb-8">
               {state?.name
                 ? `Thanks ${state.name}, we'll reach out within 24 hours with your quotation.`
