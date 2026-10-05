@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Video, Eye, HardDrive, Smartphone, Cable, CheckCircle2, Home } from "lucide-react";
+import { Video, ShieldCheck, Eye, HardDrive, Smartphone, Cable, CheckCircle2, Home, Building2, Store, Warehouse } from "lucide-react";
 import cctvHero from "@/assets/cctv-hero.jpg";
+
 
 const includedServices = [
   { icon: Home, title: "Site Assessment", desc: "On-site review and camera placement plan" },
@@ -48,8 +49,8 @@ const Cctv = () => {
 
       {/* Hero */}
       <section 
-  className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-cover bg-center"
-  style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url(${cctvHero})` }}
+  className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-cover bg-center text-white"
+  style={{ backgroundImage: `linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), url(${cctvHero})` }}
 >
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl">
