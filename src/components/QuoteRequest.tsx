@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ClipboardList, CalendarDays, CheckCircle2 } from "lucide-react";
+import { ClipboardList, CheckCircle2 } from "lucide-react";
 
 const quoteSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -57,115 +57,120 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const onSubmit = async (data: QuoteForm) => {
-    // Simulate network delay
-    await new Promise((r) => setTimeout(r, 800));
-    toast.success("Request sent!", {
-      description: `Thanks ${data.name}, we'll reach out within 24 hours with your quotation.`,
-    });
-    navigate("/booking-confirmed", {
-      state: {
-        name: data.name,
-        service: data.service,
-        location: data.location,
-        propertyType: data.propertyType,
-      },
-    });
+    try {
+      const response = await fetch("https://formspree.io/f/mbgdjevv", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        navigate("/booking-confirmed", {
+          state: {
+            name: data.name,
+            service: data.service,
+            location: data.location,
+            propertyType: data.propertyType,
+          },
+        });
+      } else {
+        throw new Error("Form submission rejected by endpoint API");
+      }
+    } catch (error) {
+      toast.error("Form Submission Error", {
+        description: "We could not process your quote request right now. Please call us directly.",
+      });
+    }
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col justify-between">
       <Navbar />
-
-      <section className="pt-20 pb-16 md:pt-28 md:pb-24">
-        <div className="container mx-auto px-4 md:px-8 max-w-2xl">
-          <div>
-            <div className="text-center mb-8">
-              <ClipboardList className="w-10 h-10 text-primary mx-auto mb-2" />
-              <h1 className="text-3xl md:text-4xl font-bold text-foreground">Request a Quote</h1>
-              <p className="text-muted-foreground mt-2">
-                Tell us about your property and we'll get back to you within 24 hours.
-              </p>
+      <main className="container mx-auto px-4 md:px-8 pt-28 pb-20 flex-grow max-w-4xl">
+        <div className="bg-card border border-border rounded-2xl shadow-card p-6 md:p-10">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+              <ClipboardList className="w-6 h-6" />
             </div>
-
-            <div className="bg-card rounded-2xl shadow-card p-6 md:p-8">
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label>Name *</Label>
-                    <Input placeholder="Your name" {...register("name")} />
-                    {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
-                  </div>
-                  <div className="space-y-2">
-                    <Label>Phone *</Label>
-                    <Input type="tel" placeholder="+254 7XX XXX XXX" {...register("phone")} />
-                    {errors.phone && <p className="text-sm text-destructive">{errors.phone.message}</p>}
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label>Email (optional)</Label>
-                    <Input type="email" placeholder="you@example.com" {...register("email")} />
-                    {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
-                  </div>
-                  <div className="space-y-2">
-                    <Label>Location *</Label>
-                    <Input placeholder="Town or county" {...register("location")} />
-                    {errors.location && <p className="text-sm text-destructive">{errors.location.message}</p>}
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label>Service *</Label>
-                    <Select onValueChange={(v) => setValue("service", v)} defaultValue={defaultService}>
-                      <SelectTrigger><SelectValue placeholder="Select a service" /></SelectTrigger>
-                      <SelectContent>
-                        {services.map((s) => (
-                          <SelectItem key={s} value={s}>{s}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    {errors.service && <p className="text-sm text-destructive">{errors.service.message}</p>}
-                  </div>
-                  <div className="space-y-2">
-                    <Label>Property Type *</Label>
-                    <Select onValueChange={(v) => setValue("propertyType", v)}>
-                      <SelectTrigger><SelectValue placeholder="Select property type" /></SelectTrigger>
-                      <SelectContent>
-                        {propertyTypes.map((p) => (
-                          <SelectItem key={p} value={p}>{p}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    {errors.propertyType && <p className="text-sm text-destructive">{errors.propertyType.message}</p>}
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label>Additional Details</Label>
-                  <Textarea
-                    placeholder="Number of cameras needed, coverage areas, any security concerns..."
-                    rows={4}
-                    {...register("notes")}
-                  />
-                </div>
-
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CalendarDays className="w-4 h-4 text-primary" />
-                  We will review your site and existing CCTV infrastructure before finalising the solution.
-                </div>
-
-                <Button type="submit" variant="brand" size="lg" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : "Submit Request"}
-                  <CheckCircle2 className="w-4 h-4" />
-                </Button>
-              </form>
+            <div>
+              <h1 className="text-2xl md:text-3xl font-bold text-foreground">Book a CCTV Site Survey</h1>
+              <p className="text-sm text-muted-foreground mt-0.5">Get a customized corporate quotation for your security infrastructure</p>
             </div>
           </div>
-        </div>
-      </section>
 
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="name">Full Name / Company Name</Label>
+                <Input id="name" placeholder="John Doe / Company Ltd" {...register("name")} />
+                {errors.name && <p className="text-xs font-medium text-destructive">{errors.name.message}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="phone">Phone Number (WhatsApp Active)</Label>
+                <Input id="phone" placeholder="+254 7XX XXX XXX" {...register("phone")} />
+                {errors.phone && <p className="text-xs font-medium text-destructive">{errors.phone.message}</p>}
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="email">Email Address (Optional)</Label>
+                <Input id="email" type="email" placeholder="client@example.com" {...register("email")} />
+                {errors.email && <p className="text-xs font-medium text-destructive">{errors.email.message}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="location">Physical Location / Town</Label>
+                <Input id="location" placeholder="e.g. Westlands, Nairobi" {...register("location")} />
+                {errors.location && <p className="text-xs font-medium text-destructive">{errors.location.message}</p>}
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="service">Requested Security Core Service</Label>
+                <Select onValueChange={(v) => setValue("service", v)} defaultValue={defaultService || undefined}>
+                  <SelectTrigger id="service">
+                    <SelectValue placeholder="Select core infrastructure pillar" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {services.map((s) => (
+                      <SelectItem key={s} value={s}>{s}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                {errors.service && <p className="text-xs font-medium text-destructive">{errors.service.message}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="propertyType">Property Category Type</Label>
+                <Select onValueChange={(v) => setValue("propertyType", v)}>
+                  <SelectTrigger id="propertyType">
+                    <SelectValue placeholder="Select property layout configuration" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {propertyTypes.map((pt) => (
+                      <SelectItem key={pt} value={pt}>{pt}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                {errors.propertyType && <p className="text-xs font-medium text-destructive">{errors.propertyType.message}</p>}
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="notes">Additional Scope Scope / Project Requirements (Optional)</Label>
+              <Textarea id="notes" placeholder="Describe camera target angles, coverage zones, or existing infrastructure..." className="min-h-[100px]" {...register("notes")} />
+              {errors.notes && <p className="text-xs font-medium text-destructive">{errors.notes.message}</p>}
+            </div>
+
+            <Button type="submit" variant="brand" className="w-full" size="lg" disabled={isSubmitting}>
+              {isSubmitting ? "Processing Submission..." : "Submit Site Survey Request"}
+            </Button>
+          </form>
+        </div>
+      </main>
       <Footer />
     </div>
   );
