@@ -35,7 +35,7 @@ const requirements = [
 
 const packages = [
   { name: "Single Camera Setup", features: ["1 high-definition camera", "Night vision & motion alerts", "Mobile viewing setup"], badge: null },
-  { name: "Home Bundle", features: ["4–8 cameras, indoor & outdoor", "NVR with extended storage", "Mobile access & user training"], badge: "Popular" },
+  { name: "Home Bundle", features: ["4-8 cameras, indoor & outdoor", "NVR with extended storage", "Mobile access & user training"], badge: "Popular" },
   { name: "Business System", features: ["Multi-room & perimeter coverage", "Central monitoring point", "Priority support plan"], badge: null },
   { name: "CCTV + Alarm Combo", features: ["Full camera coverage", "Intruder alarm integration", "Smartphone alerts"], badge: "Best Value" },
 ];
