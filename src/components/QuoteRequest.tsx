@@ -56,9 +56,15 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
 
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
-  const onSubmit = async (data: QuoteForm) => {
+    const onSubmit = async (data: QuoteForm & { tracking_pot?: string }) => {
+    // 🛡️ HONEYPOT SPAM SHIELD TRAP LINE
+    if (data.tracking_pot && data.tracking_pot.trim() !== "") {
+      console.warn("Spambot activity blocked silently.");
+      return; // Drops the execution thread completely so no email is ever sent!
+    }
+
     try {
-      const response = await fetch("https://formspree.io/f/mbgdjevv", {
+      const response = await fetch("https://formspree.io", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
