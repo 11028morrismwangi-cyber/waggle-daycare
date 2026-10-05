@@ -128,4 +128,4 @@ const Grooming = () => {
   );
 };
 
-export default Grooming;
+export default Alarms;
