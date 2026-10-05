@@ -46,7 +46,10 @@ const Cctv = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/10 via-background to-secondary/5">
+      <section 
+  className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-cover bg-center"
+  style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url(${cctvHero})` }}
+>
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
