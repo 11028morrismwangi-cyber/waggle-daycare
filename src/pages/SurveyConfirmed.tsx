@@ -76,7 +76,7 @@ const SurveyConfirmed = () => {
               <Link to="/"><Home className="w-4 h-4 mr-1" /> Back to Home</Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <Link to="/contact">Questions? Contact Us <ArrowRight className="w-4 h-4 ml-1" /></Link>
+              <Link to="/Contact">Questions? Contact Us <ArrowRight className="w-4 h-4 ml-1" /></Link>
             </Button>
           </div>
         </div>
