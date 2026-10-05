@@ -44,7 +44,7 @@ const HeroSection = () => {
               <Link to="/BookSurvey">Get a Quote</Link>
             </Button>
             <Button variant="hero-outline" size="lg" className="px-8 py-6 text-base" asChild>
-              <Link to="/daycare">Our Services</Link>
+              <Link to="/Cctv">Our Services</Link>
             </Button>
           </div>
         </div>
