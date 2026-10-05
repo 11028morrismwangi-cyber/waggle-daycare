@@ -40,9 +40,15 @@ const Contact = () => {
     defaultValues: { name: "", email: "", phone: "", subject: "", message: "" },
   });
 
-    const onSubmit = async (data: ContactForm) => {
+      const onSubmit = async (data: ContactForm & { tracking_pot?: string }) => {
+    // 🛡️ HONEYPOT SPAM SHIELD TRAP LINE
+    if (data.tracking_pot && data.tracking_pot.trim() !== "") {
+      console.warn("Spambot activity blocked silently.");
+      return; // Drops the thread completely so no email spam is ever sent!
+    }
+
     try {
-      const response = await fetch("https://formspree.io/f/mbgdjevv", {
+      const response = await fetch("https://formspree.io", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
