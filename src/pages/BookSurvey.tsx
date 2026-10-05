@@ -1,6 +1,6 @@
 import QuoteRequest from "@/components/QuoteRequest";
 
-const BookDaycare = () => {
+const BookSurvey = () => {
   return <QuoteRequest defaultService="CCTV Installation" />;
 };
 
