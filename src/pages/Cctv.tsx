@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import cctvHero from "@/assets/cctv-hero.jpg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Video, ShieldCheck, Eye, HardDrive, Smartphone, Cable, CheckCircle2, Home, Building2, Store, Warehouse } from "lucide-react";
