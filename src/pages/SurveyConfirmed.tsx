@@ -87,4 +87,4 @@ const BookingConfirmed = () => {
   );
 };
 
-export default BookingConfirmed;
+export default SurveyConfirmed;
