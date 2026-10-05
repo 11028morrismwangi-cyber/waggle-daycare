@@ -53,7 +53,7 @@ const supportPlans = [
   { coverage: "Firmware & security updates", includes: "Managed for you" },
 ];
 
-const Boarding = () => {
+const Surveillance = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
