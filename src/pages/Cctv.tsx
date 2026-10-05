@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import cctvHero from "@/assets/cctv-hero.jpg";
+import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Video, ShieldCheck, Eye, HardDrive, Smartphone, Cable, CheckCircle2, Home, Building2, Store, Warehouse } from "lucide-react";
+import { Video, Eye, HardDrive, Smartphone, Cable, CheckCircle2, Home } from "lucide-react";
+import cctvHero from "@/assets/cctv-hero.jpg";
 
 const includedServices = [
   { icon: Home, title: "Site Assessment", desc: "On-site review and camera placement plan" },
