@@ -25,7 +25,6 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* PROFESSIONAL CORPORATE ENTERPRISE URL DESTINATIONS */}
           <Route path="/cctv" element={<Cctv />} />
           <Route path="/surveillance" element={<Surveillance />} />
           <Route path="/alarms" element={<Alarms />} />
@@ -34,7 +33,7 @@ const App = () => (
           <Route path="/booking-confirmed" element={<SurveyConfirmed />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-  </BrowserRouter>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
