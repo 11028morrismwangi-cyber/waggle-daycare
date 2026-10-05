@@ -20,7 +20,7 @@ const reasons = [
   { name: "Practical Upgrades", title: "Retain what works", detail: "Compatible infrastructure is kept while weak points are improved." },
 ];
 
-const Training = () => {
+const Maintenance = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
