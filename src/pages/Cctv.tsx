@@ -38,7 +38,7 @@ const packages = [
   { name: "CCTV + Alarm Combo", features: ["Full camera coverage", "Intruder alarm integration", "Smartphone alerts"], badge: "Best Value" },
 ];
 
-const Daycare = () => {
+const Cctv = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
