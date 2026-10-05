@@ -66,7 +66,7 @@ const Cctv = () => {
               Professional placement of high-definition cameras with night vision, secure recording and remote mobile access — installed cleanly and backed by support.
             </p>
             <Button variant="brand" size="lg" asChild>
-              <Link to="/BookSurvey">Get a Quote</Link>
+              <Link to="/book-survey">Get a Quote</Link>
             </Button>
           </div>
           <img src={cctvHero} alt="Intelligent CCTV Camera Infrastructure" className="mt-10 h-64 w-full rounded-lg object-cover shadow-hero lg:hidden" />
