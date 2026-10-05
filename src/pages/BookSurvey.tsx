@@ -4,4 +4,4 @@ const BookDaycare = () => {
   return <QuoteRequest defaultService="CCTV Installation" />;
 };
 
-export default BookDaycare;
+export default BookSurvey;
