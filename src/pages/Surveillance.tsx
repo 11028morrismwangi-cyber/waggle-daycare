@@ -180,4 +180,4 @@ const Boarding = () => {
   );
 };
 
-export default Boarding;
+export default Surveillance;
