@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import aboutHero from "@/assets/about-hero.jpg";
+import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Video, ShieldCheck, BrainCircuit, MapPin, Cable, Wrench } from "lucide-react";
+import aboutHero from "@/assets/about-hero.jpg";
 
 const values = [
   { icon: BrainCircuit, name: "Intelligence First", desc: "We design around the events, risks and operational questions your cameras need to recognize." },
@@ -38,18 +39,31 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+            {/* Split Hero Layout Grid */}
+      <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5 overflow-hidden">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-3xl">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
-              <Video className="inline w-4 h-4 mr-1 -mt-0.5" /> About Us
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-4">
-              Smart Vision. <span className="text-primary">Total Security.</span>
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Cognitive Camera Vision is a Nairobi-based surveillance technology company serving clients across Kenya. We add an intelligence layer that helps cameras see, understand and identify which feed needs attention now.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            {/* Left Side: Content Text */}
+            <div className="text-left order-2 lg:order-1">
+              <span className="text-sm font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1.5 rounded-full">
+                Our Identity
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4 tracking-tight">
+                About Cognitive Camera Vision
+              </h1>
+              <p className="text-lg text-muted-foreground mt-4 leading-relaxed max-w-xl">
+                We engineer intelligent surveillance infrastructures across Kenya, transforming standard video data feeds into proactive business logic layers.
+              </p>
+            </div>
+
+            {/* Right Side: Branded Image Slot */}
+            <div className="relative order-1 lg:order-2 rounded-2xl overflow-hidden shadow-card border border-border bg-card">
+              <img 
+                src={aboutHero} 
+                alt="About Cognitive Camera Vision Operations" 
+                className="w-full h-[300px] md:h-[450px] object-cover object-center"
+              />
+            </div>
           </div>
         </div>
       </section>
