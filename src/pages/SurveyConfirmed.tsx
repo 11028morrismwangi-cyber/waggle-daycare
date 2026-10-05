@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const BookingConfirmed = () => {
+const SurveyConfirmed = () => {
   const location = useLocation();
   const state = location.state as {
     name?: string;
