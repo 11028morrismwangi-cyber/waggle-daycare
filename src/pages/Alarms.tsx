@@ -61,7 +61,7 @@ const Alarms = () => {
               Intruder alarms, video intercoms and smart doorbells — installed and integrated with your cameras so you always know who's at your door.
             </p>
             <Button variant="brand" size="lg" asChild>
-              <Link to="/BookSurvey">Request a Consultation</Link>
+              <Link to="/book-survey">Request a Consultation</Link>
             </Button>
           </div>
           <img src={alarmImg} alt="Video intercom and alarm keypad installed at a secure entrance" className="mt-10 h-64 w-full rounded-lg object-cover shadow-hero lg:hidden" />
@@ -117,7 +117,7 @@ const Alarms = () => {
           </div>
           <div className="text-center mt-10">
             <Button variant="brand" size="lg" asChild>
-              <Link to="/BookSurvey">Request a Consultation</Link>
+              <Link to="/book-survey">Request a Consultation</Link>
             </Button>
           </div>
         </div>
