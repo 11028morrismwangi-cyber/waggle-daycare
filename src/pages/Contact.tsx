@@ -40,11 +40,30 @@ const Contact = () => {
     defaultValues: { name: "", email: "", phone: "", subject: "", message: "" },
   });
 
-  const onSubmit = async (data: ContactForm) => {
-    // Simulate network delay
-    await new Promise((r) => setTimeout(r, 800));
-    toast.success("Message sent!", { description: `Thanks ${data.name}, we'll get back to you within 24 hours.` });
-    reset();
+    const onSubmit = async (data: ContactForm) => {
+    try {
+      const response = await fetch("https://formspree.io/f/mbgdjevv", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for reaching out. Our security team will contact you shortly.",
+        });
+        reset();
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Submission Error",
+        description: "Something went wrong. Please call us directly or try again later.",
+      });
+    }
   };
 
   return (
