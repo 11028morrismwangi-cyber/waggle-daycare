@@ -44,7 +44,7 @@ const Maintenance = () => {
               A camera that stops recording is a blind spot you don't know you have. Our maintenance plans keep every camera, cable and drive in perfect working order.
             </p>
             <Button variant="brand" size="lg" asChild>
-              <Link to="/BookSurvey">Request a Consultation</Link>
+              <Link to="/book-survey">Request a Consultation</Link>
             </Button>
           </div>
           <img src={maintenanceImg} alt="Technician servicing an installed CCTV camera" className="mt-10 h-64 w-full rounded-lg object-cover shadow-hero lg:hidden" />
