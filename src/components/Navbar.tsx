@@ -69,7 +69,7 @@ const Navbar = () => {
               +254 796 497 698
             </a>
             <Button variant="brand" size="lg" asChild>
-              <Link to="/book-daycare">Get a Quote</Link>
+              <Link to="/book-survey">Get a Quote</Link>
             </Button>
           </div>
 
@@ -106,7 +106,7 @@ const Navbar = () => {
               ))}
               <div className="pt-3 border-t border-border mt-2">
                 <Button variant="brand" className="w-full" size="lg" asChild>
-                  <Link to="/book-daycare">Get a Quote</Link>
+                  <Link to="/book-survey">Get a Quote</Link>
                 </Button>
               </div>
             </nav>

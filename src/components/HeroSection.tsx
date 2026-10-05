@@ -41,7 +41,7 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-wrap gap-4">
             <Button variant="hero" size="lg" className="px-8 py-6 text-base" asChild>
-              <Link to="/book-daycare">Get a Quote</Link>
+              <Link to="/book-survey">Get a Quote</Link>
             </Button>
             <Button variant="hero-outline" size="lg" className="px-8 py-6 text-base" asChild>
               <Link to="/daycare">Our Services</Link>

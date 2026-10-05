@@ -62,7 +62,7 @@ const PricingPreview = () => {
         <div className="text-center mt-10">
           <p className="text-sm text-muted-foreground mb-4">Final scope and pricing are tailored to your cameras, site and monitoring priorities.</p>
           <Button variant="brand" size="lg" asChild>
-            <Link to="/book-daycare">Discuss Your Site</Link>
+            <Link to="/book-survey">Discuss Your Site</Link>
           </Button>
         </div>
       </div>
