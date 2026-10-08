@@ -83,6 +83,7 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
         throw new Error("Form submission rejected by endpoint API");
       }
     } catch (error) {
+      console.log("this is the error from the form: ",error)
       toast.error("Form Submission Error", {
         description: "We could not process your quote request right now. Please call us directly.",
       });
