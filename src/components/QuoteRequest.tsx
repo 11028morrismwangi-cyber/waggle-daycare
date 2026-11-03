@@ -21,6 +21,7 @@ const quoteSchema = z.object({
   propertyType: z.string().min(1, "Please select a property type"),
   location: z.string().trim().min(1, "Location is required").max(120),
   notes: z.string().max(500).optional(),
+  tracking_pot: z.string().optional(),
 });
 
 type QuoteForm = z.infer<typeof quoteSchema>;
@@ -51,6 +52,7 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
       propertyType: "",
       location: "",
       notes: "",
+      tracking_pot: "",
     },
   });
 
@@ -111,7 +113,7 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             {/* INVISIBLE SPAM BOT TRAP ELEMENT BLOCK */}
             <div className="hidden" aria-hidden="true">
-              <input type="text" tabIndex={-1} autoComplete="off" placeholder="Leave empty" {...register("tracking_pot" as any)} />
+              <input type="text" tabIndex={-1} autoComplete="off" placeholder="Leave empty" {...register("tracking_pot")} />
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
