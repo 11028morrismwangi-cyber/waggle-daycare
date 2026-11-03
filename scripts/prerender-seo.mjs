@@ -87,7 +87,7 @@ function setMeta(html, key, value, attribute = "name") {
   const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const pattern = new RegExp(`<meta\\s+${attribute}=["']${escapedKey}["']\\s+content=["'][^"']*["']\\s*\\/?>`, "i");
   const tag = `<meta ${attribute}="${key}" content="${escapeHtml(value)}" />`;
-  return pattern.test(html) ? html.replace(pattern, tag) : html.replace("</head>", `  ${tag}\\n  </head>`);
+  return pattern.test(html) ? html.replace(pattern, tag) : html.replace("</head>", "  " + tag + "\n  </head>");
 }
 
 for (const page of pages) {
@@ -98,7 +98,7 @@ for (const page of pages) {
 
   const canonical = `https://cognitivevision.co.ke${page.path === "/" ? "/" : page.path}`;
   const imageUrl = `https://cognitivevision.co.ke/seo-images/${page.image}`;
-  let html = template.replace(/<title>[^<]*<\\/title>/i, `<title>${escapeHtml(page.title)}</title>`);
+  let html = template.replace(new RegExp("<title>[^<]*</title>", "i"), `<title>${escapeHtml(page.title)}</title>`);
 
   html = setMeta(html, "description", page.description);
   html = setMeta(html, "robots", page.noIndex ? "noindex,follow" : "index,follow");
@@ -114,11 +114,7 @@ for (const page of pages) {
   html = setMeta(html, "twitter:image", imageUrl);
 
   const canonicalTag = `<link rel="canonical" href="${canonical}" />`;
-  if (/<link\\s+rel=["']canonical["'][^>]*>/i.test(html)) {
-    html = html.replace(/<link\\s+rel=["']canonical["'][^>]*>/i, canonicalTag);
-  } else {
-    html = html.replace("</head>", `  ${canonicalTag}\\n  </head>`);
-  }
+  html = html.replace("</head>", "  " + canonicalTag + "\n  </head>");
 
   const outputDir = page.path === "/" ? dist : path.join(dist, page.path.slice(1));
   await mkdir(outputDir, { recursive: true });
