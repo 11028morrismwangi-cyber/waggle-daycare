@@ -60,10 +60,9 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        toast({
-          title: "Message Sent!",
-          description: "Thank you for reaching out. Our security team will contact you shortly.",
-        });
+        toast.success("Message Sent!", {
+  description: "Thank you for reaching out. Our security team will contact you shortly.",
+});
         reset();
       } else {
         throw new Error("Form submission failed");
