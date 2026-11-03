@@ -1,6 +1,8 @@
 name: Validate website build
 
 on:
+  push:
+    branches: ["seo/site-foundation-fixes"]
   pull_request:
     branches: ["main"]
 
