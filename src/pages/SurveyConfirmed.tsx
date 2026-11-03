@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { CheckCircle2, ClipboardList, Video, MapPin, Home, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,7 @@ const SurveyConfirmed = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="Request Received | Cognitive Camera Vision" description="Your security system consultation request has been received by Cognitive Camera Vision." path="/booking-confirmed" noIndex />
       <Navbar />
 
       <section className="pt-28 pb-20 md:pt-36 md:pb-28">
