@@ -43,7 +43,10 @@ jobs:
           test -f dist/cctv/index.html
           test -f dist/surveillance/index.html
           test -f dist/alarms/index.html
+          test -f dist/intercoms/index.html
           test -f dist/maintenance/index.html
           grep -q 'CCTV Installation in Nairobi &amp; Kenya' dist/cctv/index.html
           grep -q 'og:image' dist/cctv/index.html
+          grep -q 'Video Intercom Installation in Nairobi' dist/intercoms/index.html
+          grep -q '/intercoms' dist/sitemap.xml
           grep -q 'noindex,follow' dist/booking-confirmed/index.html
