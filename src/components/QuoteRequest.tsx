@@ -21,6 +21,7 @@ const quoteSchema = z.object({
   propertyType: z.string().min(1, "Please select a property type"),
   location: z.string().trim().min(1, "Location is required").max(120),
   notes: z.string().max(500).optional(),
+  tracking_pot: z.string().optional(),
 });
 
 type QuoteForm = z.infer<typeof quoteSchema>;
@@ -28,7 +29,8 @@ type QuoteForm = z.infer<typeof quoteSchema>;
 const services = [
   "CCTV Installation",
   "Surveillance System",
-  "Alarm & Intercom",
+  "Intruder Alarm Systems",
+  "Video Intercom Installation",
   "Maintenance & Support",
   "Full Package (CCTV + Alarm)",
 ];
@@ -51,6 +53,7 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
       propertyType: "",
       location: "",
       notes: "",
+      tracking_pot: "",
     },
   });
 
@@ -103,7 +106,7 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
               <ClipboardList className="w-6 h-6" />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold text-foreground">Book a CCTV Site Survey</h1>
+              <h1 className="text-2xl md:text-3xl font-bold text-foreground">Request a Site Survey or Quote</h1>
               <p className="text-sm text-muted-foreground mt-0.5">Get a customized corporate quotation for your security infrastructure</p>
             </div>
           </div>
@@ -111,7 +114,7 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             {/* INVISIBLE SPAM BOT TRAP ELEMENT BLOCK */}
             <div className="hidden" aria-hidden="true">
-              <input type="text" tabIndex={-1} autoComplete="off" placeholder="Leave empty" {...register("tracking_pot" as any)} />
+              <input type="text" tabIndex={-1} autoComplete="off" placeholder="Leave empty" {...register("tracking_pot")} />
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -122,8 +125,8 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number (WhatsApp Active)</Label>
-                <Input id="phone" placeholder="+254 7XX XXX XXX" {...register("phone")} />
+                <Label htmlFor="phone">Phone Number</Label>
+                <Input id="phone" type="tel" placeholder="+254 7XX XXX XXX" {...register("phone")} />
                 {errors.phone && <p className="text-xs font-medium text-destructive">{errors.phone.message}</p>}
               </div>
             </div>
@@ -175,7 +178,7 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="notes">Additional Scope Scope / Project Requirements (Optional)</Label>
+              <Label htmlFor="notes">Additional Scope / Project Requirements (Optional)</Label>
               <Textarea id="notes" placeholder="Describe camera target angles, coverage zones, or existing infrastructure..." className="min-h-[100px]" {...register("notes")} />
               {errors.notes && <p className="text-xs font-medium text-destructive">{errors.notes.message}</p>}
             </div>

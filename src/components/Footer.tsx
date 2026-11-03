@@ -46,12 +46,13 @@ const Footer = () => {
             <h4 className="font-semibold text-primary-foreground mb-4">Quick Links</h4>
             <div className="space-y-2 text-sm">
               {[
-                { label: "CCTV Installation", path: "/Cctv" },
-                { label: "Surveillance Systems", path: "/Surveillance" },
-                { label: "Alarm & Intercom", path: "/Alarms" },
-                { label: "Maintenance", path: "/Maintenance" },
-                { label: "Gallery", path: "/Gallery" },
-                { label: "About", path: "/About" },
+                { label: "CCTV Installation", path: "/cctv" },
+                { label: "Surveillance Systems", path: "/surveillance" },
+                { label: "Intruder Alarms", path: "/alarms" },
+                { label: "Video Intercoms", path: "/intercoms" },
+                { label: "Maintenance", path: "/maintenance" },
+                { label: "Gallery", path: "/gallery" },
+                { label: "About", path: "/about" },
               ].map((link) => (
                 <Link key={link.path} to={link.path} className="block hover:text-primary">
                   {link.label}

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Video, ShieldCheck, Eye, HardDrive, Smartphone, Cable, CheckCircle2, Home, Building2, Store, Warehouse } from "lucide-react";
@@ -45,6 +46,7 @@ const Cctv = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="CCTV Installation in Nairobi & Kenya | Cognitive Camera Vision" description="Professional CCTV camera installation in Nairobi and across Kenya, with HD recording, night vision, remote viewing and tailored system design." path="/cctv" />
       <Navbar />
 
                 {/* Split Hero Layout Grid */}
@@ -66,7 +68,7 @@ const Cctv = () => {
               Professional placement of high-definition cameras with night vision, secure recording and remote mobile access — installed cleanly and backed by support.
             </p>
             <Button variant="brand" size="lg" asChild>
-              <Link to="/book-survey">Get a Quote</Link>
+              <Link to="/book-survey?service=CCTV%20Installation">Get a Quote</Link>
             </Button>
           </div>
           <img src={cctvHero} alt="Intelligent CCTV Camera Infrastructure" className="mt-10 h-64 w-full rounded-lg object-cover shadow-hero lg:hidden" />
@@ -173,7 +175,7 @@ const Cctv = () => {
                   ))}
                 </ul>
                 <Button variant="brand" className="w-full" asChild>
-                  <Link to="/book-survey">Request a Quote</Link>
+                  <Link to="/book-survey?service=CCTV%20Installation">Request a Quote</Link>
                 </Button>
               </div>
             ))}

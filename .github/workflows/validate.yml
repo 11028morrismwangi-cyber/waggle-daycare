@@ -1,0 +1,57 @@
+name: Validate website build
+
+on:
+  push:
+    branches: ["seo/site-foundation-fixes"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Report dependency vulnerabilities
+        run: |
+          npm audit --json > npm-audit.json || true
+          node -e 'const a=require("./npm-audit.json"); const v=a.vulnerabilities||{}; console.log("Dependency audit summary:", JSON.stringify(a.metadata?.vulnerabilities||{})); for (const [name,item] of Object.entries(v)) { console.log("\\nPACKAGE:", name, "| severity:", item.severity, "| direct:", item.isDirect, "| range:", item.range, "| fix:", JSON.stringify(item.fixAvailable)); for (const advisory of item.via||[]) { if (typeof advisory==="object") console.log("  ADVISORY:", advisory.title, "| range:", advisory.range, "| URL:", advisory.url); } } if (a.error) console.log("AUDIT ERROR:", JSON.stringify(a.error));'
+
+      - name: Run lint checks
+        run: npm run lint
+
+      - name: Run automated tests
+        run: npm test
+
+      - name: Download homepage background video
+        run: curl --fail --location --retry 3 --output public/hero-cctv.mp4 "https://id-preview--7decc45a-767b-482b-95f6-6b8cb91af2ab.lovable.app/__l5e/assets-v1/9fa27a54-6680-4cd3-bbee-b7c3f8b874c0/hero-cctv.mp4"
+
+      - name: Build and generate static SEO pages
+        run: npm run build
+
+      - name: Verify generated SEO pages
+        run: |
+          test -f dist/index.html
+          test -f dist/cctv/index.html
+          test -f dist/surveillance/index.html
+          test -f dist/alarms/index.html
+          test -f dist/intercoms/index.html
+          test -f dist/maintenance/index.html
+          grep -q 'CCTV Installation in Nairobi &amp; Kenya' dist/cctv/index.html
+          grep -q 'og:image' dist/cctv/index.html
+          grep -q 'Video Intercom Installation in Nairobi' dist/intercoms/index.html
+          grep -q '/intercoms' dist/sitemap.xml
+          grep -q 'noindex,follow' dist/booking-confirmed/index.html

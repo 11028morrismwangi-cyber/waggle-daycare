@@ -8,10 +8,11 @@ const navLinks = [
   { label: "CCTV", path: "/cctv" },
   { label: "Surveillance", path: "/surveillance" },
   { label: "Alarms", path: "/alarms" },
+  { label: "Intercoms", path: "/intercoms" },
   { label: "Maintenance", path: "/maintenance" },
   { label: "Gallery", path: "/gallery" },
   { label: "About", path: "/about" },
-  { label: "Contact", path: "/Contact" },
+  { label: "Contact", path: "/contact" },
 ];
 
 const Navbar = () => {
@@ -104,7 +105,14 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-3 border-t border-border mt-2">
+              <div className="pt-3 border-t border-border mt-2 space-y-2">
+                <a
+                  href="tel:254796497698"
+                  className="flex w-full items-center justify-center gap-2 rounded-lg border border-primary px-4 py-3 text-sm font-semibold text-primary hover:bg-primary/5"
+                >
+                  <Phone className="w-4 h-4" />
+                  Call +254 796 497 698
+                </a>
                 <Button variant="brand" className="w-full" size="lg" asChild>
                   <Link to="/book-survey">Get a Quote</Link>
                 </Button>

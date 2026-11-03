@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, Phone, Mail, Clock, Car } from "lucide-react";
@@ -18,6 +19,7 @@ const contactSchema = z.object({
   phone: z.string().trim().min(9, "Please enter a valid phone number").max(20),
   subject: z.string().min(1, "Please select a subject"),
   message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000),
+  tracking_pot: z.string().optional(),
 });
 
 type ContactForm = z.infer<typeof contactSchema>;
@@ -26,7 +28,8 @@ const subjects = [
   "Request a Quote",
   "CCTV Installation",
   "Surveillance System",
-  "Alarm & Intercom",
+  "Intruder Alarm Systems",
+  "Video Intercom Installation",
   "Maintenance & Support",
   "General Inquiry",
   "Other",
@@ -37,7 +40,7 @@ const Contact = () => {
 
   const { register, handleSubmit, reset, setValue, formState: { errors, isSubmitting } } = useForm<ContactForm>({
     resolver: zodResolver(contactSchema),
-    defaultValues: { name: "", email: "", phone: "", subject: "", message: "" },
+    defaultValues: { name: "", email: "", phone: "", subject: "", message: "", tracking_pot: "" },
   });
 
       const onSubmit = async (data: ContactForm & { tracking_pot?: string }) => {
@@ -76,6 +79,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="Contact Cognitive Camera Vision | CCTV & Security System Quotes" description="Contact Cognitive Camera Vision for CCTV installation, surveillance, alarms, video intercoms and security system maintenance in Kenya." path="/contact" />
       <Navbar />
 
       <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
@@ -165,7 +169,7 @@ const Contact = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             {/* INVISIBLE SPAM BOT TRAP ELEMENT BLOCK */}
                   <div className="hidden" aria-hidden="true">
-                    <input type="text" tabIndex={-1} autoComplete="off" placeholder="Leave empty" {...register("tracking_pot" as any)} />
+                    <input type="text" tabIndex={-1} autoComplete="off" placeholder="Leave empty" {...register("tracking_pot")} />
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4">

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Wrench, CheckCircle2, Zap, Award, MessageSquareQuote } from "lucide-react";
@@ -25,6 +26,7 @@ const Maintenance = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="CCTV Maintenance & Security System Support | Cognitive Camera Vision" description="CCTV maintenance, camera cleaning, recording checks, system upgrades and ongoing support in Nairobi and across Kenya." path="/maintenance" />
       <Navbar />
 
       <section className="relative overflow-hidden pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/10 via-background to-primary/5">
@@ -44,7 +46,7 @@ const Maintenance = () => {
               A camera that stops recording is a blind spot you don't know you have. Our maintenance plans keep every camera, cable and drive in perfect working order.
             </p>
             <Button variant="brand" size="lg" asChild>
-              <Link to="/book-survey">Request a Consultation</Link>
+              <Link to="/book-survey?service=Maintenance%20%26%20Support">Request a Consultation</Link>
             </Button>
           </div>
           <img src={maintenanceImg} alt="Technician servicing an installed CCTV camera" className="mt-10 h-64 w-full rounded-lg object-cover shadow-hero lg:hidden" />
@@ -115,7 +117,7 @@ const Maintenance = () => {
           </div>
           <div className="text-center mt-10">
             <Button variant="brand" size="lg" asChild>
-              <Link to="/BookSurvey">Get Started</Link>
+              <Link to="/book-survey?service=Maintenance%20%26%20Support">Get Started</Link>
             </Button>
           </div>
         </div>

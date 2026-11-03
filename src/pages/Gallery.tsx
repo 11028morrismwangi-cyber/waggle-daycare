@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -41,6 +42,7 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="Security System Installation Gallery | Cognitive Camera Vision" description="Explore examples of CCTV installations, surveillance equipment, intercoms and security system work by Cognitive Camera Vision." path="/gallery" />
       <Navbar />
 
       <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">

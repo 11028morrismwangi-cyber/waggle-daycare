@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Eye, HardDrive, Smartphone, Bell, CloudUpload, ShieldCheck, CheckCircle2, Plus } from "lucide-react";
@@ -58,6 +59,7 @@ const Surveillance = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="CCTV Surveillance Systems & Remote Monitoring | Cognitive Camera Vision" description="CCTV surveillance systems with NVR recording, remote playback, mobile access, smart alerts and backup power for Kenyan properties." path="/surveillance" />
       <Navbar />
 
       <section className="relative overflow-hidden pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-secondary/10 via-background to-primary/5">
@@ -77,7 +79,7 @@ const Surveillance = () => {
               Full surveillance systems with NVR recording, remote playback and mobile access — review any moment, from anywhere, at any time.
             </p>
             <Button variant="brand-secondary" size="lg" asChild>
-              <Link to="/book-survey">Request a Quote</Link>
+              <Link to="/book-survey?service=Surveillance%20System">Request a Quote</Link>
             </Button>
           </div>
           <img src={surveillanceImg} alt="Security control room displaying multiple live camera feeds" className="mt-10 h-64 w-full rounded-lg object-cover shadow-hero lg:hidden" />
@@ -132,7 +134,7 @@ const Surveillance = () => {
                   ))}
                 </ul>
                 <Button variant={system.popular ? "brand-secondary" : "brand"} className="w-full" asChild>
-                  <Link to="/book-survey">Request a Quote</Link>
+                  <Link to="/book-survey?service=Surveillance%20System">Request a Quote</Link>
                 </Button>
               </div>
             ))}
