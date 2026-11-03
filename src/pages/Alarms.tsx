@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Bell } from "lucide-react";
@@ -42,6 +43,7 @@ const Alarms = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="Intruder Alarms & Video Intercom Installation | Cognitive Camera Vision" description="Intruder alarm systems, video intercoms, smart doorbells and integrated entry security for homes, apartments and businesses in Kenya." path="/alarms" />
       <Navbar />
 
       <section className="relative overflow-hidden pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
