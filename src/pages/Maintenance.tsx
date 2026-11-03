@@ -117,7 +117,7 @@ const Maintenance = () => {
           </div>
           <div className="text-center mt-10">
             <Button variant="brand" size="lg" asChild>
-              <Link to="/BookSurvey">Get Started</Link>
+              <Link to="/book-survey">Get Started</Link>
             </Button>
           </div>
         </div>
