@@ -125,8 +125,8 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number (WhatsApp Active)</Label>
-                <Input id="phone" placeholder="+254 7XX XXX XXX" {...register("phone")} />
+                <Label htmlFor="phone">Phone Number</Label>
+                <Input id="phone" type="tel" placeholder="+254 7XX XXX XXX" {...register("phone")} />
                 {errors.phone && <p className="text-xs font-medium text-destructive">{errors.phone.message}</p>}
               </div>
             </div>
