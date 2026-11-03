@@ -8,6 +8,7 @@ const navLinks = [
   { label: "CCTV", path: "/cctv" },
   { label: "Surveillance", path: "/surveillance" },
   { label: "Alarms", path: "/alarms" },
+  { label: "Intercoms", path: "/intercoms" },
   { label: "Maintenance", path: "/maintenance" },
   { label: "Gallery", path: "/gallery" },
   { label: "About", path: "/about" },
