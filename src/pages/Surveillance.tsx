@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Eye, HardDrive, Smartphone, Bell, CloudUpload, ShieldCheck, CheckCircle2, Plus } from "lucide-react";
@@ -58,6 +59,7 @@ const Surveillance = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="CCTV Surveillance Systems & Remote Monitoring | Cognitive Camera Vision" description="CCTV surveillance systems with NVR recording, remote playback, mobile access, smart alerts and backup power for Kenyan properties." path="/surveillance" />
       <Navbar />
 
       <section className="relative overflow-hidden pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-secondary/10 via-background to-primary/5">
