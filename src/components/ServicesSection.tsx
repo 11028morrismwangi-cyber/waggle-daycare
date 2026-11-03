@@ -20,11 +20,18 @@ const services = [
     link: "/surveillance",
   },
   {
-    title: "Alarm & Intercom",
-    description: "Motion sensors, video doorbells and intercoms with instant smartphone alerts.",
-    price: "Integrated protection",
+    title: "Intruder Alarms",
+    description: "Alarm systems with suitable sensors, sirens and alert options for the property.",
+    price: "Intrusion detection",
     image: alarmImg,
     link: "/alarms",
+  },
+  {
+    title: "Video Intercoms",
+    description: "Audio and video communication at gates, doors and controlled entrances.",
+    price: "Visitor communication",
+    image: alarmImg,
+    link: "/intercoms",
   },
   {
     title: "Maintenance",
@@ -49,7 +56,7 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
           {services.map((service, i) => (
             <div key={service.title}>
               <Link
