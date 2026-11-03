@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Video, ShieldCheck, BrainCircuit, MapPin, Cable, Wrench } from "lucide-react";
@@ -37,6 +38,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="About Cognitive Camera Vision | Intelligent Security Systems Kenya" description="Learn about Cognitive Camera Vision, a Nairobi-based security systems company integrating CCTV, video intelligence, alarms and access solutions." path="/about" />
       <Navbar />
 
             {/* Split Hero Layout Grid */}
