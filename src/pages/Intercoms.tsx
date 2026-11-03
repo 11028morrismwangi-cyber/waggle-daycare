@@ -73,7 +73,7 @@ const Intercoms = () => (
             We design and install audio and video intercom systems that help households, offices and shared properties screen visitors and manage entry points.
           </p>
           <Button variant="brand" size="lg" asChild>
-            <Link to="/book-survey">Request an Intercom Assessment</Link>
+            <Link to="/book-survey?service=Video%20Intercom%20Installation">Request an Intercom Assessment</Link>
           </Button>
         </div>
         <img src={intercomImg} alt="Video intercom equipment for a controlled entrance" className="mt-10 h-64 w-full rounded-lg object-cover shadow-hero lg:hidden" />
@@ -159,7 +159,7 @@ const Intercoms = () => (
         <p className="text-muted-foreground mb-8">Tell us about the property, entrance points and number of users. We will use that information to plan the appropriate system and quotation.</p>
         <div className="flex flex-wrap gap-3 justify-center">
           <Button variant="brand" size="lg" asChild>
-            <Link to="/book-survey">Request a Site Assessment</Link>
+            <Link to="/book-survey?service=Video%20Intercom%20Installation">Request a Site Assessment</Link>
           </Button>
           <Button variant="outline" size="lg" asChild>
             <Link to="/contact">Contact Our Team</Link>
