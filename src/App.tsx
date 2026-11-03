@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Cctv from "./pages/Cctv";
 import Surveillance from "./pages/Surveillance";
 import Alarms from "./pages/Alarms";
+import Intercoms from "./pages/Intercoms";
 import Maintenance from "./pages/Maintenance";
 import Gallery from "./pages/Gallery";
 import About from "./pages/About";
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/cctv" element={<Cctv />} />
           <Route path="/surveillance" element={<Surveillance />} />
           <Route path="/alarms" element={<Alarms />} />
+          <Route path="/intercoms" element={<Intercoms />} />
           <Route path="/maintenance" element={<Maintenance />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
