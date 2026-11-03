@@ -35,6 +35,13 @@ const pages = [
     imageAlt: "Video intercom and alarm system for a secure entrance",
   },
   {
+    path: "/intercoms",
+    title: "Video Intercom Installation in Nairobi & Kenya | Cognitive Camera Vision",
+    description: "Video and audio intercom installation for homes, apartments, estates and offices in Nairobi, along Thika Road and across Kenya.",
+    image: "alarm-intercom.jpg",
+    imageAlt: "Video intercom equipment for a controlled entrance",
+  },
+  {
     path: "/maintenance",
     title: "CCTV Maintenance & Security System Support | Cognitive Camera Vision",
     description: "CCTV maintenance, camera cleaning, recording checks, troubleshooting and security system upgrades in Nairobi and across Kenya.",
