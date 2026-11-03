@@ -25,6 +25,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Run lint checks
+        run: npm run lint
+
+      - name: Run automated tests
+        run: npm test
+
       - name: Download homepage background video
         run: curl --fail --location --retry 3 --output public/hero-cctv.mp4 "https://id-preview--7decc45a-767b-482b-95f6-6b8cb91af2ab.lovable.app/__l5e/assets-v1/9fa27a54-6680-4cd3-bbee-b7c3f8b874c0/hero-cctv.mp4"
 
