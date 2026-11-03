@@ -178,7 +178,7 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="notes">Additional Scope Scope / Project Requirements (Optional)</Label>
+              <Label htmlFor="notes">Additional Scope / Project Requirements (Optional)</Label>
               <Textarea id="notes" placeholder="Describe camera target angles, coverage zones, or existing infrastructure..." className="min-h-[100px]" {...register("notes")} />
               {errors.notes && <p className="text-xs font-medium text-destructive">{errors.notes.message}</p>}
             </div>
