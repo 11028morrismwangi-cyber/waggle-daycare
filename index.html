@@ -23,14 +23,31 @@
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "Cognitive Camera Vision",
       "@id": "https://cognitivevision.co.ke/#business",
+      "name": "Cognitive Camera Vision",
       "url": "https://cognitivevision.co.ke/",
       "telephone": "+254796497698",
-      "areaServed": {
-        "@type": "Country",
-        "name": "Kenya"
-      }
+      "email": "info@cognitivevision.co.ke",
+      "areaServed": [
+        { "@type": "City", "name": "Nairobi" },
+        { "@type": "Place", "name": "Thika Road corridor" },
+        { "@type": "Country", "name": "Kenya" }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday",
+            "https://schema.org/Saturday"
+          ],
+          "opens": "08:00",
+          "closes": "17:00"
+        }
+      ]
     }
     </script>
 <script>
