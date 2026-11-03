@@ -48,7 +48,8 @@ const Footer = () => {
               {[
                 { label: "CCTV Installation", path: "/cctv" },
                 { label: "Surveillance Systems", path: "/surveillance" },
-                { label: "Alarm & Intercom", path: "/alarms" },
+                { label: "Intruder Alarms", path: "/alarms" },
+                { label: "Video Intercoms", path: "/intercoms" },
                 { label: "Maintenance", path: "/maintenance" },
                 { label: "Gallery", path: "/gallery" },
                 { label: "About", path: "/about" },
