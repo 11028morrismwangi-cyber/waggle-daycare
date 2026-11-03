@@ -72,6 +72,28 @@
       ]
     }
     </script>
+<script>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get("p");
+
+    if (page) {
+      const route = "/" + page.replace(/^\/+|\/+$/g, "").toLowerCase();
+
+      const remainingParams = new URLSearchParams(window.location.search);
+      remainingParams.delete("p");
+
+      const query = remainingParams.toString();
+
+      const newUrl = route +
+        (query ? "?" + query : "") +
+        window.location.hash;
+
+      window.history.replaceState(null, "", newUrl);
+    }
+  })();
+</script>
+    
   </head>
 
   <body>
