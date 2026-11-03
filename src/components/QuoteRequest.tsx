@@ -106,7 +106,7 @@ const QuoteRequest = ({ defaultService }: QuoteRequestProps) => {
               <ClipboardList className="w-6 h-6" />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold text-foreground">Book a CCTV Site Survey</h1>
+              <h1 className="text-2xl md:text-3xl font-bold text-foreground">Request a Site Survey or Quote</h1>
               <p className="text-sm text-muted-foreground mt-0.5">Get a customized corporate quotation for your security infrastructure</p>
             </div>
           </div>
