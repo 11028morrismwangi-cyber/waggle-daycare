@@ -29,7 +29,8 @@ type QuoteForm = z.infer<typeof quoteSchema>;
 const services = [
   "CCTV Installation",
   "Surveillance System",
-  "Alarm & Intercom",
+  "Intruder Alarm Systems",
+  "Video Intercom Installation",
   "Maintenance & Support",
   "Full Package (CCTV + Alarm)",
 ];
