@@ -10,28 +10,28 @@ const services = [
     description: "Live analysis that helps existing or new cameras identify events and prioritize attention.",
     price: "Built around your site",
     image: cctvImg,
-    link: "/Cctv",
+    link: "/cctv",
   },
   {
     title: "CCTV Systems",
     description: "Purpose-designed camera, recording and remote-viewing systems for each property.",
     price: "New or existing systems",
     image: surveillanceImg,
-    link: "/Surveillance",
+    link: "/surveillance",
   },
   {
     title: "Alarm & Intercom",
     description: "Motion sensors, video doorbells and intercoms with instant smartphone alerts.",
     price: "Integrated protection",
     image: alarmImg,
-    link: "/Alarms",
+    link: "/alarms",
   },
   {
     title: "Maintenance",
     description: "Scheduled health checks, camera cleaning, cable testing and firmware updates.",
     price: "Reliable long-term care",
     image: maintenanceImg,
-    link: "/Maintenance",
+    link: "/maintenance",
   },
 ];
 
