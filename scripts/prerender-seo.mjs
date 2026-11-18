@@ -103,7 +103,9 @@ for (const page of pages) {
   await mkdir(imageDir, { recursive: true });
   await cp(imageSource, path.join(imageDir, page.image));
 
-  const canonical = `https://cognitivevision.co.ke${page.path === "/" ? "/" : page.path}`;
+  // GitHub Pages serves directory index files at trailing-slash URLs.
+  // Keep canonical, Open Graph and sitemap URLs aligned with that final URL.
+  const canonical = `https://cognitivevision.co.ke${page.path === "/" ? "/" : `${page.path}/`}`;
   const imageUrl = `https://cognitivevision.co.ke/seo-images/${page.image}`;
   let html = template.replace(new RegExp("<title>[^<]*</title>", "i"), `<title>${escapeHtml(page.title)}</title>`);
 
@@ -120,6 +122,8 @@ for (const page of pages) {
   html = setMeta(html, "twitter:description", page.description);
   html = setMeta(html, "twitter:image", imageUrl);
 
+  // Replace any template canonical instead of appending a duplicate.
+  html = html.replace(/<link\s+rel=["']canonical["'][^>]*>/gi, "");
   const canonicalTag = `<link rel="canonical" href="${canonical}" />`;
   html = html.replace("</head>", "  " + canonicalTag + "\n  </head>");
 
