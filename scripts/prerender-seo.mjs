@@ -1,8 +1,7 @@
 import { cp, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { createElement } from "node:module";
+import { createElement } from "react";
 import { createServer } from "vite";
-import React from "react";
 import { renderToString } from "react-dom/server";
 import { MemoryRouter } from "react-router-dom";
 
@@ -97,7 +96,7 @@ function escapeHtml(value) {
 }
 
 function setMeta(html, key, value, attribute = "name") {
-  const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const escapedKey = key.replace(/[.*+?^\$\{\}()|[\]\\]/g, "\\$&");
   const pattern = new RegExp(`<meta\\s+${attribute}=["']${escapedKey}["']\\s+content=["'][^"']*["']\\s*\\/?>`, "i");
   const tag = `<meta ${attribute}="${key}" content="${escapeHtml(value)}" />`;
   return pattern.test(html) ? html.replace(pattern, tag) : html.replace("</head>", "  " + tag + "\n  </head>");
@@ -105,7 +104,7 @@ function setMeta(html, key, value, attribute = "name") {
 
 const assetFiles = Object.entries(manifest)
   .filter(([source]) => source.startsWith("src/assets/"))
-  .map(([source, output]) => [`/ ${source}`.replace("/ ", "/"), `/${output.file}`]);
+  .map(([source, output]) => [`/${source}`, `/${output.file}`]);
 
 let vite;
 try {
@@ -131,13 +130,18 @@ try {
       ),
     );
 
+    if (!rendered.includes("<h1")) {
+      throw new Error(`${page.path}: server rendering did not produce the expected page heading.`);
+    }
+
+    if (!template.includes('<div id="root"></div>')) {
+      throw new Error("HTML template is missing the React root mount point.");
+    }
+
     let html = template.replace(
       '<div id="root"></div>',
       `<div id="root">${rendered}</div>`,
     );
-    if (!html.includes(rendered)) {
-      throw new Error(`${page.path}: could not insert server-rendered page content into the HTML template.`);
-    }
 
     // Vite's SSR module loader uses source asset paths. Rewrite them to the
     // hashed production files emitted by the same build for hydration parity.
@@ -145,7 +149,7 @@ try {
       html = html.replaceAll(source, output);
     }
 
-    html = html.replace(/<title>[^<]*<\\/title>/i, `<title>${escapeHtml(page.title)}</title>`);
+    html = html.replace(/<title>[^<]*<\/title>/i, `<title>${escapeHtml(page.title)}</title>`);
     html = setMeta(html, "description", page.description);
     html = setMeta(html, "robots", page.noIndex ? "noindex,follow" : "index,follow");
     html = setMeta(html, "og:type", "website", "property");
@@ -159,7 +163,7 @@ try {
     html = setMeta(html, "twitter:description", page.description);
     html = setMeta(html, "twitter:image", imageUrl);
 
-    html = html.replace(/<link\\s+rel=["']canonical["'][^>]*>/gi, "");
+    html = html.replace(/<link\s+rel=["']canonical["'][^>]*>/gi, "");
     const canonicalTag = `<link rel="canonical" href="${canonical}" />`;
     html = html.replace("</head>", "  " + canonicalTag + "\n  </head>");
 
