@@ -25,7 +25,7 @@ function setMeta(attribute: "name" | "property", key: string, content: string) {
 
 const SEO = ({ title, description, path, noIndex = false }: SEOProps) => {
   useEffect(() => {
-    const canonicalUrl = new URL(path, SITE_URL).toString();
+    const normalizedPath = path === "/" ? "/" : `/${path.replace(/^\\/+|\\/+$/g, "")}/`;\n    const canonicalUrl = new URL(normalizedPath, SITE_URL).toString();
 
     document.title = title;
     setMeta("name", "description", description);
