@@ -23,6 +23,8 @@ for (const route of [...routes, "/booking-confirmed"]) {
   assert(canonicals[0][1] === expected, `${route}: canonical mismatch. Expected ${expected}, got ${canonicals[0][1]}`);
   assert(/<title>[^<]+<\/title>/i.test(html), `${route}: missing title`);
   assert(/<meta\s+name=["']description["']\s+content=["'][^"']+["']/i.test(html), `${route}: missing meta description`);
+  assert(/<div id="root">[\s\S]*<h1\b/i.test(html), `${route}: expected server-rendered page content and an H1 in the initial HTML`);
+  assert(!html.includes("/src/assets/"), `${route}: unresolved source asset URL remains in generated HTML`);
   const robots = html.match(/<meta\s+name=["']robots["']\s+content=["']([^"']+)["']/i)?.[1] ?? "";
   if (route === "/booking-confirmed") {
     assert(robots.includes("noindex"), "booking-confirmed must remain noindex");
@@ -44,4 +46,4 @@ assert(/User-agent:\s*\*/i.test(robotsTxt), "robots.txt is missing the wildcard 
 assert(/Allow:\s*\//i.test(robotsTxt), "robots.txt must allow crawling");
 assert(robotsTxt.includes("https://cognitivevision.co.ke/sitemap.xml"), "robots.txt must reference the sitemap");
 
-console.log(`SEO output verified: ${indexableUrls.size} indexable routes, one canonical per route, matching sitemap and crawl rules.`);
+console.log(`SEO output verified: ${indexableUrls.size} server-rendered, indexable routes, canonical URLs, sitemap and crawl rules.`);
