@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import heroVideoAsset from "@/assets/hero-cctv.mp4.asset.json";
 import heroPoster from "@/assets/hero-cctv.jpg";
 
-const heroVideo =
-  window.location.hostname === "localhost" || window.location.hostname.endsWith("lovable.app")
-    ? heroVideoAsset.url
-    : "/hero-cctv.mp4";
+const isPreviewHost =
+  typeof window !== "undefined" &&
+  (window.location.hostname === "localhost" || window.location.hostname.endsWith("lovable.app"));
+
+const heroVideo = isPreviewHost ? heroVideoAsset.url : "/hero-cctv.mp4";
 
 const HeroSection = () => {
   return (

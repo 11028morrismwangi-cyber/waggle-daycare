@@ -7,23 +7,19 @@
     <meta name="description" content="Intelligent CCTV installation, surveillance systems, alarms and intercom solutions for homes, institutions and businesses across Kenya." />
     <meta name="author" content="Cognitive Camera Vision" />
 
-    <!-- BRAND LOGO FAVICON SEALS -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
     <meta property="og:title" content="Cognitive Camera Vision — Intelligent CCTV Systems Across Kenya" />
     <meta property="og:description" content="Intelligent CCTV and surveillance systems for homes, institutions and businesses across Kenya." />
     <meta property="og:type" content="website" />
-
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Cognitive Camera Vision — Intelligent CCTV Systems Across Kenya" />
-    <meta name="twitter:description" content="Intelligent CCTV and surveillance systems for homes, institutions and businesses across Kenya." />
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://cognitivevision.co.ke/#business",
+      "@type": "Organization",
+      "@id": "https://cognitivevision.co.ke/#organization",
       "name": "Cognitive Camera Vision",
       "url": "https://cognitivevision.co.ke/",
       "telephone": "+254796497698",
@@ -33,50 +29,32 @@
         { "@type": "Place", "name": "Thika Road corridor" },
         { "@type": "Country", "name": "Kenya" }
       ],
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "https://schema.org/Monday",
-            "https://schema.org/Tuesday",
-            "https://schema.org/Wednesday",
-            "https://schema.org/Thursday",
-            "https://schema.org/Friday",
-            "https://schema.org/Saturday"
-          ],
-          "opens": "08:00",
-          "closes": "17:00"
-        }
-      ]
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+254796497698",
+        "email": "info@cognitivevision.co.ke",
+        "contactType": "customer service"
+      }
     }
     </script>
-<script>
-  (function () {
-    const params = new URLSearchParams(window.location.search);
-    const page = params.get("p");
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const page = params.get("p");
 
-    if (page) {
-      const route = "/" + page.replace(/^\/+|\/+$/g, "").toLowerCase();
-
-      const remainingParams = new URLSearchParams(window.location.search);
-      remainingParams.delete("p");
-
-      const query = remainingParams.toString();
-
-      const newUrl = route +
-        (query ? "?" + query : "") +
-        window.location.hash;
-
-      window.history.replaceState(null, "", newUrl);
-    }
-  })();
-</script>
-    
+        if (page) {
+          const route = "/" + page.replace(/^\/+|\/+$/g, "").toLowerCase();
+          const remainingParams = new URLSearchParams(window.location.search);
+          remainingParams.delete("p");
+          const query = remainingParams.toString();
+          const newUrl = route + (query ? "?" + query : "") + window.location.hash;
+          window.history.replaceState(null, "", newUrl);
+        }
+      })();
+    </script>
   </head>
-
   <body>
     <div id="root"></div>
-    <!-- CRITICAL REACT ENGINE MOUNT POINT BINDING LINE -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

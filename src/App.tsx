@@ -18,29 +18,35 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+// Keep route content independent of the router implementation so the same
+// components can be rendered on the server and hydrated in the browser.
+export const AppContent = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/cctv" element={<Cctv />} />
-          <Route path="/surveillance" element={<Surveillance />} />
-          <Route path="/alarms" element={<Alarms />} />
-          <Route path="/intercoms" element={<Intercoms />} />
-          <Route path="/maintenance" element={<Maintenance />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/book-survey" element={<BookSurvey />} />
-          <Route path="/booking-confirmed" element={<SurveyConfirmed />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/cctv" element={<Cctv />} />
+        <Route path="/surveillance" element={<Surveillance />} />
+        <Route path="/alarms" element={<Alarms />} />
+        <Route path="/intercoms" element={<Intercoms />} />
+        <Route path="/maintenance" element={<Maintenance />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/book-survey" element={<BookSurvey />} />
+        <Route path="/booking-confirmed" element={<SurveyConfirmed />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </TooltipProvider>
   </QueryClientProvider>
+);
+
+const App = () => (
+  <BrowserRouter>
+    <AppContent />
+  </BrowserRouter>
 );
 
 export default App;
